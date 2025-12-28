@@ -1,1 +1,101 @@
-===========================================================================Changes between "Terminal" version 1.9 (April 1990) and 2.0 (November 1990)===========================================================================This file describes the bug corrections and the improvements that wheremade to "Terminal" from version 1.9 to 2.0. The following text should helpyou to decide if you want to download the newer version. Bug reports andsuggestions for improvement are always welcome. All my excuses to thosepeople who suggested improvements that could not (yet) be implemented inthis version. And thanks to all those who send reports and suggestions.Erny Tontlinger                     CompuServe    [73720,2200]33, route d'Arlon                   Internet      73720.2200@compuserve.comL-8410 Steinfort                    Packet radio  LX1YZ @ LX0PACLuxembourg                          [44.161.1.1]  lx1yz.ampr.org___________________________________________________________________________XMODEMXModem receive did not close files that needed only one block.___________________________________________________________________________SYSTEM 7Corrected a font problem that prevented Terminal for running under System 7(7.0b1). Increased Terminal's default partition size from 128 to 160K.___________________________________________________________________________MENUSThe script menu, the macro menu and the port pop-up menu, now displaycorrectly any names that might include the menu meta characters ( ';' '^''!' '<' '/' '(' ).___________________________________________________________________________SETTINGS FILEVolumes are now saved by name not by reference number. The settings filestructure has changed.___________________________________________________________________________ZMODEMAdded ZModem file transfers.___________________________________________________________________________CONTROL CHARACTERSNow it's possible to use the option key or the command as control key forthose keyboards that lack a control key. On keyboards with a control keyall characters that need the option key are now available. Previously theoption key always acted as a control key, creating unaccessible characterson international keyboards.___________________________________________________________________________SCRIPTSScripts can now be executed by opening them from the Finder (i.e. doubleclicking on a script file). There is a new option in the File menu: "Kissscript file" to change creator of TEXT files to Terminal's creator. Holddown option (or shift, or command) key to revert to TEXT.___________________________________________________________________________HANDSHAKEXON/XOFF, CTS only, DTR only, CTS&DTR handshake or no handshake can be usedall the time (not just while sending text files as previously).___________________________________________________________________________OTHER SERIAL DEVICESTerminal can now use all possible serial ports, not just the modem orprinter port, if the Communications Tool Box is available and if thoseserial drivers are correctly registered with the Communications Tool Box.___________________________________________________________________________CONFIGURATION RESOURCEThe structure of the 'CNFG' (id 128) resource has changed. The font is nowstored by name instead of by number. Added 'TMPL' resource to edit 'CNFG'resource with ResEdit.___________________________________________________________________________INTRINSIC FUNCTIONSYou must review your scripts that use the following instrinsic functions:    download()      Changed    protocol()      Changed    setup()         Changed    text()          Changed    upload()        Changed    xyparms()       New    zparms()        New___________________________________________________________________________ICONSTerminal's icons have changed. There are now distinct icons for:    Terminal, the application    Terminal Settings, settings file    MacBinary, files created with the "Make MacBinary..." menu command    Partial ZModem, uncomplete files received by ZModem    Script, script TEXT filesSo if you have had an old version of Terminal on your disk, please rebuildyour Desktop file so that the Finder becomes aware of the new file typesand icons.___________________________________________________________________________COMPILERTerminal can be compiled with THINK C 4.02 (or THINK C 4.04 for System 7)or MPW 3.2 C.___________________________________________________________________________
+===========================================================================
+Changes between "Terminal" version 1.9 (April 1990) and 2.0 (November 1990)
+===========================================================================
+
+This file describes the bug corrections and the improvements that where
+made to "Terminal" from version 1.9 to 2.0. The following text should help
+you to decide if you want to download the newer version. Bug reports and
+suggestions for improvement are always welcome. All my excuses to those
+people who suggested improvements that could not (yet) be implemented in
+this version. And thanks to all those who send reports and suggestions.
+
+Erny Tontlinger                     CompuServe    [73720,2200]
+33, route d'Arlon                   Internet      73720.2200@compuserve.com
+L-8410 Steinfort                    Packet radio  LX1YZ @ LX0PAC
+Luxembourg                          [44.161.1.1]  lx1yz.ampr.org
+
+___________________________________________________________________________
+XMODEM
+
+XModem receive did not close files that needed only one block.
+___________________________________________________________________________
+SYSTEM 7
+
+Corrected a font problem that prevented Terminal for running under System 7
+(7.0b1). Increased Terminal's default partition size from 128 to 160K.
+___________________________________________________________________________
+MENUS
+
+The script menu, the macro menu and the port pop-up menu, now display
+correctly any names that might include the menu meta characters ( ';' '^'
+'!' '<' '/' '(' ).
+___________________________________________________________________________
+SETTINGS FILE
+
+Volumes are now saved by name not by reference number. The settings file
+structure has changed.
+___________________________________________________________________________
+ZMODEM
+
+Added ZModem file transfers.
+___________________________________________________________________________
+CONTROL CHARACTERS
+
+Now it's possible to use the option key or the command as control key for
+those keyboards that lack a control key. On keyboards with a control key
+all characters that need the option key are now available. Previously the
+option key always acted as a control key, creating unaccessible characters
+on international keyboards.
+___________________________________________________________________________
+SCRIPTS
+
+Scripts can now be executed by opening them from the Finder (i.e. double
+clicking on a script file). There is a new option in the File menu: "Kiss
+script file" to change creator of TEXT files to Terminal's creator. Hold
+down option (or shift, or command) key to revert to TEXT.
+___________________________________________________________________________
+HANDSHAKE
+
+XON/XOFF, CTS only, DTR only, CTS&DTR handshake or no handshake can be used
+all the time (not just while sending text files as previously).
+___________________________________________________________________________
+OTHER SERIAL DEVICES
+
+Terminal can now use all possible serial ports, not just the modem or
+printer port, if the Communications Tool Box is available and if those
+serial drivers are correctly registered with the Communications Tool Box.
+___________________________________________________________________________
+CONFIGURATION RESOURCE
+
+The structure of the 'CNFG' (id 128) resource has changed. The font is now
+stored by name instead of by number. Added 'TMPL' resource to edit 'CNFG'
+resource with ResEdit.
+___________________________________________________________________________
+INTRINSIC FUNCTIONS
+
+You must review your scripts that use the following instrinsic functions:
+    download()      Changed
+    protocol()      Changed
+    setup()         Changed
+    text()          Changed
+    upload()        Changed
+    xyparms()       New
+    zparms()        New
+___________________________________________________________________________
+ICONS
+
+Terminal's icons have changed. There are now distinct icons for:
+    Terminal, the application
+    Terminal Settings, settings file
+    MacBinary, files created with the "Make MacBinary..." menu command
+    Partial ZModem, uncomplete files received by ZModem
+    Script, script TEXT files
+So if you have had an old version of Terminal on your disk, please rebuild
+your Desktop file so that the Finder becomes aware of the new file types
+and icons.
+___________________________________________________________________________
+COMPILER
+
+Terminal can be compiled with THINK C 4.02 (or THINK C 4.04 for System 7)
+or MPW 3.2 C.
+___________________________________________________________________________

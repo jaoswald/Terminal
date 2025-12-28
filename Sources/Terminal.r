@@ -1,1 +1,24 @@
-include "Seagate:Terminal ฤ:Terminal น.Rsrc";#include "Types.r"resource 'SIZE' (-1) {	dontSaveScreen,	acceptSuspendResumeEvents,	enableOptionSwitch,	canBackground,	multiFinderAware,	backgroundAndForeground,	dontGetFrontClicks,	ignoreChildDiedEvents,	32BitCompatible,	reserved,	reserved,	reserved,	reserved,	reserved,	reserved,	reserved,	163840,	163840};
+include "Seagate:Terminal ร:Terminal ยน.Rsrc";
+
+#include "Types.r"
+
+resource 'SIZE' (-1) {
+	dontSaveScreen,
+	acceptSuspendResumeEvents,
+	enableOptionSwitch,
+	canBackground,
+	multiFinderAware,
+	backgroundAndForeground,
+	dontGetFrontClicks,
+	ignoreChildDiedEvents,
+	32BitCompatible,
+	reserved,
+	reserved,
+	reserved,
+	reserved,
+	reserved,
+	reserved,
+	reserved,
+	163840,
+	163840
+};

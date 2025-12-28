@@ -1,1 +1,7 @@
-Terminal 2.2 sources for THINK C 5.02 or MPW 3.2 C. Terminal is a serialcommunication program. Scrollable capture buffer. Continous capture to andsend from TEXT file. Software or hardware handshake. XModem, YModem,ZModem, QuickB file transfer. Automatic MacBinary format recognition,offline extraction, creation. Builtin C interpreter executes scripts fromTEXT files (modem-setup auto-logon BBS). Text string macros. Program isfree.
+Terminal 2.2 sources for THINK C 5.02 or MPW 3.2 C. Terminal is a serial
+communication program. Scrollable capture buffer. Continous capture to and
+send from TEXT file. Software or hardware handshake. XModem, YModem,
+ZModem, QuickB file transfer. Automatic MacBinary format recognition,
+offline extraction, creation. Builtin C interpreter executes scripts from
+TEXT files (modem-setup auto-logon BBS). Text string macros. Program is
+free.

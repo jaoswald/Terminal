@@ -1,1 +1,6 @@
-Terminal 2.2 compact powerful serial communication program. Scrollablecapture buffer. Continous capture to and send from TEXT file. Software orhardware handshake. XModem, YModem, ZModem, QuickB file transfer. AutomaticMacBinary format recognition, offline extraction, creation. Builtin Cinterpreter executes scripts from TEXT files (modem-setup auto-logon BBS).Text string macros. Program is free. C source available.
+Terminal 2.2 compact powerful serial communication program. Scrollable
+capture buffer. Continous capture to and send from TEXT file. Software or
+hardware handshake. XModem, YModem, ZModem, QuickB file transfer. Automatic
+MacBinary format recognition, offline extraction, creation. Builtin C
+interpreter executes scripts from TEXT files (modem-setup auto-logon BBS).
+Text string macros. Program is free. C source available.

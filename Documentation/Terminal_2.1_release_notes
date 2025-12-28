@@ -1,1 +1,65 @@
-===========================================================================Changes between  "Terminal" 2.0  (November 1990)  and  2.1  (December 1990)===========================================================================Terminal 2.1 corrects some serious bugs in the ZModem receive functionsthat were discovered shortly after I released version 2.0. Sorry for thosebugs, and many thanks to those who signaled them to me. I should havetested the ZModem file transfers more extensively.Erny Tontlinger                     CompuServe    [73720,2200]33, route d'Arlon                   Internet      73720.2200@compuserve.comL-8410 Steinfort                    Packet radio  LX1YZ @ LX0PACLuxembourg                          [44.161.1.1]  lx1yz.ampr.org___________________________________________________________________________ERROR -108 (memFullErr)When doing a ZModem download with MacBinary files, Terminal would notalways succeed in extracting the file from the MacBinary envelope. Theerror message was "error #-108": memFullErr (not enough memory available).This same problem appeared also when manually trying to extract from aMacBinary file from the "File" menu.In both cases the same function was called, which temporarily allocated abig memory buffer to read the file. This function made sure to leave somememory available, but it appeared that this was not enough in some cases.The size of this reserve memory has been increased, and I hope this solvesthe problem.___________________________________________________________________________ZMODEM RECEIVE CRC ERRORThis was a bug of the type: "if error then no error". The ZModem receivefunction did not correctly compare the received CRC with its calculatedCRC, and every frame received was considered ok. Now Terminal correctlydetects bad CRCs.___________________________________________________________________________ZMODEM RECEIVE LOST CHARACTERSThe ZModem receive function did flush the serial input buffer at the wrongmoment, so that the first characters of incoming frames were sometimeslost. Coupled with the previous problem, this made frames acceptable thatwere to short (e.g. 990 bytes instead of 1024 bytes).___________________________________________________________________________LINEFEED CHARACTERS IN RECEIVED TEXT FILES WITH ZMODEMTerminal ignored the ZCNL conversion option (convert linefeed to local endof line convention) in the ZFILE header when receiving a text file. (Notethat "White Knight 11.01" also ignores the ZCNL conversion option!). Thereis at least one other Macintosh program ("ZTerm 0.85") that sends linefeedcharacters for text files, and I guess that all UNIX "sz" programs alsosend linefeed characters for text files. Now if Terminal sees that the ZCNLconversion option in ZFILE header is set it will convert the receivedlinefeed characters to carriage return characters, which is the end of lineconvention used on the Macintosh.___________________________________________________________________________ZMODEM AUTORECEIVEI have been told that the ZModem autoreceive feature did not always work. Icould not reproduce that problem. Terminal detects the following sequenceto automatically start ZModem receive:	'*' ctrl-X "B00000000000000" ctrl-MThis character sequence must be received without any errors.___________________________________________________________________________
+===========================================================================
+Changes between  "Terminal" 2.0  (November 1990)  and  2.1  (December 1990)
+===========================================================================
+
+Terminal 2.1 corrects some serious bugs in the ZModem receive functions
+that were discovered shortly after I released version 2.0. Sorry for those
+bugs, and many thanks to those who signaled them to me. I should have
+tested the ZModem file transfers more extensively.
+
+Erny Tontlinger                     CompuServe    [73720,2200]
+33, route d'Arlon                   Internet      73720.2200@compuserve.com
+L-8410 Steinfort                    Packet radio  LX1YZ @ LX0PAC
+Luxembourg                          [44.161.1.1]  lx1yz.ampr.org
+
+___________________________________________________________________________
+ERROR -108 (memFullErr)
+
+When doing a ZModem download with MacBinary files, Terminal would not
+always succeed in extracting the file from the MacBinary envelope. The
+error message was "error #-108": memFullErr (not enough memory available).
+This same problem appeared also when manually trying to extract from a
+MacBinary file from the "File" menu.
+
+In both cases the same function was called, which temporarily allocated a
+big memory buffer to read the file. This function made sure to leave some
+memory available, but it appeared that this was not enough in some cases.
+The size of this reserve memory has been increased, and I hope this solves
+the problem.
+___________________________________________________________________________
+ZMODEM RECEIVE CRC ERROR
+
+This was a bug of the type: "if error then no error". The ZModem receive
+function did not correctly compare the received CRC with its calculated
+CRC, and every frame received was considered ok. Now Terminal correctly
+detects bad CRCs.
+___________________________________________________________________________
+ZMODEM RECEIVE LOST CHARACTERS
+
+The ZModem receive function did flush the serial input buffer at the wrong
+moment, so that the first characters of incoming frames were sometimes
+lost. Coupled with the previous problem, this made frames acceptable that
+were to short (e.g. 990 bytes instead of 1024 bytes).
+___________________________________________________________________________
+LINEFEED CHARACTERS IN RECEIVED TEXT FILES WITH ZMODEM
+
+Terminal ignored the ZCNL conversion option (convert linefeed to local end
+of line convention) in the ZFILE header when receiving a text file. (Note
+that "White Knight 11.01" also ignores the ZCNL conversion option!). There
+is at least one other Macintosh program ("ZTerm 0.85") that sends linefeed
+characters for text files, and I guess that all UNIX "sz" programs also
+send linefeed characters for text files. Now if Terminal sees that the ZCNL
+conversion option in ZFILE header is set it will convert the received
+linefeed characters to carriage return characters, which is the end of line
+convention used on the Macintosh.
+___________________________________________________________________________
+ZMODEM AUTORECEIVE
+
+I have been told that the ZModem autoreceive feature did not always work. I
+could not reproduce that problem. Terminal detects the following sequence
+to automatically start ZModem receive:
+
+	'*' ctrl-X "B00000000000000" ctrl-M
+
+This character sequence must be received without any errors.
+___________________________________________________________________________

@@ -1,1 +1,9 @@
-; pascal void SendComplete(void);SendComplete	PROC	EXPORT		; A0 has address of IOParam				MOVE.L	-4(A0),A0	; Get busy flag address				CLR.B	0(A0)		; Clear the busy flag (FALSE)				RTS								END
+; pascal void SendComplete(void);
+
+SendComplete	PROC	EXPORT		; A0 has address of IOParam
+
+				MOVE.L	-4(A0),A0	; Get busy flag address
+				CLR.B	0(A0)		; Clear the busy flag (FALSE)
+				RTS
+				
+				END

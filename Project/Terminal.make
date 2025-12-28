@@ -1,1 +1,184 @@
-# Terminal 2.0# MPW 3.2 make fileOBJ 		= :(Objects):	# Objects folderSRC			= :Sources:		# Sources folder# All application header filesHEADERS		= ¶			{SRC}CancelDialog.h ¶			{SRC}CisB.h ¶			{SRC}CRC.h ¶			{SRC}Document.h ¶			{SRC}File.h ¶			{SRC}FormatStr.h ¶			{SRC}Interp.h ¶			{SRC}MacBinary.h ¶			{SRC}Macros.h ¶			{SRC}Main.h ¶			{SRC}MySF.h ¶			{SRC}Options.h ¶			{SRC}Popup.h ¶			{SRC}Procedure.h ¶			{SRC}Scroll.h ¶			{SRC}Serial.h ¶			{SRC}Strings.h ¶			{SRC}Text.h ¶			{SRC}Utilities.h ¶			{SRC}XModem.h ¶			{SRC}ZModem.h# All object filesOBJECTS		= ¶			{OBJ}About.c.o ¶			{OBJ}CancelDialog.c.o ¶			{OBJ}CisB.c.o ¶			{OBJ}CRC.c.o ¶			{OBJ}Document.c.o ¶			{OBJ}File.c.o ¶			{OBJ}FormatStr.c.o ¶			{OBJ}Glue.a.o ¶			{OBJ}Init.c.o ¶			{OBJ}Interp.c.o ¶			{OBJ}MacBinary.c.o ¶			{OBJ}Macros.c.o ¶			{OBJ}Main.c.o ¶			{OBJ}MySF.c.o ¶			{OBJ}OtherOptions.c.o ¶			{OBJ}Popup.c.o ¶			{OBJ}PortOptions.c.o ¶			{OBJ}Procedure.c.o ¶			{OBJ}ProtocolOptions.c.o ¶			{OBJ}Script.c.o ¶			{OBJ}Scroll.c.o ¶			{OBJ}SendOptions.c.o ¶			{OBJ}Serial.c.o ¶			{OBJ}TerminalOptions.c.o ¶			{OBJ}Text.c.o ¶			{OBJ}Utilities.c.o ¶			{OBJ}XModem.c.o ¶			{OBJ}XOptions.c.o ¶			{OBJ}ZModem.c.o ¶			{OBJ}ZOptions.c.o# C optionsOPT = -r -mbg off -sym full -o {OBJ}Terminal	ÄÄ {OBJECTS}			Link	-sym full -x {OBJ}CrossRef ¶					-ra Main=resLocked,resProtected,resPreload ¶					-ra Main2=resLocked,resProtected,resPreload ¶					-ra Init=resPurgeable,resProtected ¶					-ra Options=resPurgeable,resProtected ¶					-ra About=resPurgeable,resProtected ¶					-ra CisB=resPurgeable,resProtected ¶					-ra XModem=resPurgeable,resProtected ¶					-ra ZModem=resPurgeable,resProtected ¶					-sg Main=STDCLIB ¶ 					-o {Targ} {OBJECTS} ¶					{CLibraries}StdCLib.o ¶					{Libraries}Runtime.o ¶					{Libraries}Interface.o			SetFile {Targ} -t APPL -c 'ET_T' -a BTerminal	ÄÄ 'Terminal ¹.Rsrc' {SRC}Terminal.r			Rez -a -o {Targ} -i {RIncludes}Types.r {SRC}Terminal.r{OBJ}MacHeadersMPW			Ä {SRC}MacHeadersMPW.c							C {OPT} {SRC}MacHeadersMPW.c{OBJ}About.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}About.c							C {OPT} {SRC}About.c{OBJ}CancelDialog.c.o		Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}CancelDialog.c							C {OPT} {SRC}CancelDialog.c{OBJ}CisB.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}CisB.c							C {OPT} {SRC}CisB.c{OBJ}CRC.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}CRC.c							C {OPT} {SRC}CRC.c{OBJ}Document.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Document.c							C {OPT} {SRC}Document.c{OBJ}File.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}File.c							C {OPT} {SRC}File.c{OBJ}FormatStr.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}FormatStr.c	 						C {OPT} {SRC}FormatStr.c{OBJ}Glue.a.o				Ä {SRC}Glue.a	 						Asm -o {OBJ} {SRC}Glue.a{OBJ}Init.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Init.c							C {OPT} {SRC}Init.c{OBJ}Interp.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Interp.c							C {OPT} {SRC}Interp.c{OBJ}MacBinary.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}MacBinary.c							C {OPT} {SRC}MacBinary.c{OBJ}Macros.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Macros.c							C {OPT} {SRC}Macros.c{OBJ}Main.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Main.c							C {OPT} {SRC}Main.c{OBJ}MySF.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}MySF.c							C {OPT} {SRC}MySF.c{OBJ}OtherOptions.c.o		Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}OtherOptions.c							C {OPT} {SRC}OtherOptions.c{OBJ}Popup.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Popup.c							C {OPT} {SRC}Popup.c{OBJ}PortOptions.c.o		Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}PortOptions.c							C {OPT} {SRC}PortOptions.c{OBJ}Procedure.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Procedure.c							C {OPT} {SRC}Procedure.c{OBJ}ProtocolOptions.c.o	Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}ProtocolOptions.c							C {OPT} {SRC}ProtocolOptions.c{OBJ}Script.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Script.c							C {OPT} {SRC}Script.c{OBJ}Scroll.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Scroll.c							C {OPT} {SRC}Scroll.c{OBJ}SendOptions.c.o		Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}SendOptions.c							C {OPT} {SRC}SendOptions.c{OBJ}Serial.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Serial.c							C {OPT} {SRC}Serial.c{OBJ}TerminalOptions.c.o	Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}TerminalOptions.c							C {OPT} {SRC}TerminalOptions.c{OBJ}Text.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Text.c							C {OPT} {SRC}Text.c{OBJ}Utilities.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}Utilities.c							C {OPT} {SRC}Utilities.c{OBJ}XModem.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}XModem.c							C {OPT} {SRC}XModem.c{OBJ}XOptions.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}XOptions.c							C {OPT} {SRC}XOptions.c{OBJ}ZModem.c.o				Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}ZModem.c							C {OPT} {SRC}ZModem.c{OBJ}ZOptions.c.o			Ä {OBJ}MacHeadersMPW {HEADERS} {SRC}ZOptions.c							C {OPT} {SRC}ZOptions.c
+# Terminal 2.0
+# MPW 3.2 make file
+
+OBJ 		= :(Objects):	# Objects folder
+SRC			= :Sources:		# Sources folder
+
+# All application header files
+
+HEADERS		= Â¶
+			{SRC}CancelDialog.h Â¶
+			{SRC}CisB.h Â¶
+			{SRC}CRC.h Â¶
+			{SRC}Document.h Â¶
+			{SRC}File.h Â¶
+			{SRC}FormatStr.h Â¶
+			{SRC}Interp.h Â¶
+			{SRC}MacBinary.h Â¶
+			{SRC}Macros.h Â¶
+			{SRC}Main.h Â¶
+			{SRC}MySF.h Â¶
+			{SRC}Options.h Â¶
+			{SRC}Popup.h Â¶
+			{SRC}Procedure.h Â¶
+			{SRC}Scroll.h Â¶
+			{SRC}Serial.h Â¶
+			{SRC}Strings.h Â¶
+			{SRC}Text.h Â¶
+			{SRC}Utilities.h Â¶
+			{SRC}XModem.h Â¶
+			{SRC}ZModem.h
+
+# All object files
+
+OBJECTS		= Â¶
+			{OBJ}About.c.o Â¶
+			{OBJ}CancelDialog.c.o Â¶
+			{OBJ}CisB.c.o Â¶
+			{OBJ}CRC.c.o Â¶
+			{OBJ}Document.c.o Â¶
+			{OBJ}File.c.o Â¶
+			{OBJ}FormatStr.c.o Â¶
+			{OBJ}Glue.a.o Â¶
+			{OBJ}Init.c.o Â¶
+			{OBJ}Interp.c.o Â¶
+			{OBJ}MacBinary.c.o Â¶
+			{OBJ}Macros.c.o Â¶
+			{OBJ}Main.c.o Â¶
+			{OBJ}MySF.c.o Â¶
+			{OBJ}OtherOptions.c.o Â¶
+			{OBJ}Popup.c.o Â¶
+			{OBJ}PortOptions.c.o Â¶
+			{OBJ}Procedure.c.o Â¶
+			{OBJ}ProtocolOptions.c.o Â¶
+			{OBJ}Script.c.o Â¶
+			{OBJ}Scroll.c.o Â¶
+			{OBJ}SendOptions.c.o Â¶
+			{OBJ}Serial.c.o Â¶
+			{OBJ}TerminalOptions.c.o Â¶
+			{OBJ}Text.c.o Â¶
+			{OBJ}Utilities.c.o Â¶
+			{OBJ}XModem.c.o Â¶
+			{OBJ}XOptions.c.o Â¶
+			{OBJ}ZModem.c.o Â¶
+			{OBJ}ZOptions.c.o
+
+# C options
+
+OPT = -r -mbg off -sym full -o {OBJ}
+
+
+Terminal	Ã„Ã„ {OBJECTS}
+			Link	-sym full -x {OBJ}CrossRef Â¶
+					-ra Main=resLocked,resProtected,resPreload Â¶
+					-ra Main2=resLocked,resProtected,resPreload Â¶
+					-ra Init=resPurgeable,resProtected Â¶
+					-ra Options=resPurgeable,resProtected Â¶
+					-ra About=resPurgeable,resProtected Â¶
+					-ra CisB=resPurgeable,resProtected Â¶
+					-ra XModem=resPurgeable,resProtected Â¶
+					-ra ZModem=resPurgeable,resProtected Â¶
+					-sg Main=STDCLIB Â¶
+ 					-o {Targ} {OBJECTS} Â¶
+					{CLibraries}StdCLib.o Â¶
+					{Libraries}Runtime.o Â¶
+					{Libraries}Interface.o
+			SetFile {Targ} -t APPL -c 'ET_T' -a B
+
+
+Terminal	Ã„Ã„ 'Terminal Â¹.Rsrc' {SRC}Terminal.r
+			Rez -a -o {Targ} -i {RIncludes}Types.r {SRC}Terminal.r
+
+
+{OBJ}MacHeadersMPW			Ã„ {SRC}MacHeadersMPW.c
+							C {OPT} {SRC}MacHeadersMPW.c
+
+{OBJ}About.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}About.c
+							C {OPT} {SRC}About.c
+
+{OBJ}CancelDialog.c.o		Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}CancelDialog.c
+							C {OPT} {SRC}CancelDialog.c
+
+{OBJ}CisB.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}CisB.c
+							C {OPT} {SRC}CisB.c
+
+{OBJ}CRC.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}CRC.c
+							C {OPT} {SRC}CRC.c
+
+{OBJ}Document.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Document.c
+							C {OPT} {SRC}Document.c
+
+{OBJ}File.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}File.c
+							C {OPT} {SRC}File.c
+
+{OBJ}FormatStr.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}FormatStr.c
+	 						C {OPT} {SRC}FormatStr.c
+
+{OBJ}Glue.a.o				Ã„ {SRC}Glue.a
+	 						Asm -o {OBJ} {SRC}Glue.a
+
+{OBJ}Init.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Init.c
+							C {OPT} {SRC}Init.c
+
+{OBJ}Interp.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Interp.c
+							C {OPT} {SRC}Interp.c
+
+{OBJ}MacBinary.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}MacBinary.c
+							C {OPT} {SRC}MacBinary.c
+
+{OBJ}Macros.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Macros.c
+							C {OPT} {SRC}Macros.c
+
+{OBJ}Main.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Main.c
+							C {OPT} {SRC}Main.c
+
+{OBJ}MySF.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}MySF.c
+							C {OPT} {SRC}MySF.c
+
+{OBJ}OtherOptions.c.o		Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}OtherOptions.c
+							C {OPT} {SRC}OtherOptions.c
+
+{OBJ}Popup.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Popup.c
+							C {OPT} {SRC}Popup.c
+
+{OBJ}PortOptions.c.o		Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}PortOptions.c
+							C {OPT} {SRC}PortOptions.c
+
+{OBJ}Procedure.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Procedure.c
+							C {OPT} {SRC}Procedure.c
+
+{OBJ}ProtocolOptions.c.o	Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}ProtocolOptions.c
+							C {OPT} {SRC}ProtocolOptions.c
+
+{OBJ}Script.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Script.c
+							C {OPT} {SRC}Script.c
+
+{OBJ}Scroll.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Scroll.c
+							C {OPT} {SRC}Scroll.c
+
+{OBJ}SendOptions.c.o		Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}SendOptions.c
+							C {OPT} {SRC}SendOptions.c
+
+{OBJ}Serial.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Serial.c
+							C {OPT} {SRC}Serial.c
+
+{OBJ}TerminalOptions.c.o	Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}TerminalOptions.c
+							C {OPT} {SRC}TerminalOptions.c
+
+{OBJ}Text.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Text.c
+							C {OPT} {SRC}Text.c
+
+{OBJ}Utilities.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}Utilities.c
+							C {OPT} {SRC}Utilities.c
+
+{OBJ}XModem.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}XModem.c
+							C {OPT} {SRC}XModem.c
+
+{OBJ}XOptions.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}XOptions.c
+							C {OPT} {SRC}XOptions.c
+
+{OBJ}ZModem.c.o				Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}ZModem.c
+							C {OPT} {SRC}ZModem.c
+
+{OBJ}ZOptions.c.o			Ã„ {OBJ}MacHeadersMPW {HEADERS} {SRC}ZOptions.c
+							C {OPT} {SRC}ZOptions.c

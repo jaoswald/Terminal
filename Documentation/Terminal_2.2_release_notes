@@ -1,1 +1,11 @@
-===========================================================================Changes between  "Terminal" 2.1  (December 1990)  and   2.2  (January 1992)===========================================================================Terminal 2.2 corrects some minor bugs and the sources were modified so thatthey could be compiled with THINK C 5.02. There are no new functions.Erny Tontlinger                     CompuServe    [73720,2200]33, route d'Arlon                   Internet      73720.2200@compuserve.comL-8410 SteinfortLuxembourg
+===========================================================================
+Changes between  "Terminal" 2.1  (December 1990)  and   2.2  (January 1992)
+===========================================================================
+
+Terminal 2.2 corrects some minor bugs and the sources were modified so that
+they could be compiled with THINK C 5.02. There are no new functions.
+
+Erny Tontlinger                     CompuServe    [73720,2200]
+33, route d'Arlon                   Internet      73720.2200@compuserve.com
+L-8410 Steinfort
+Luxembourg
