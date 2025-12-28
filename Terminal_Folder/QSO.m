@@ -1,1 +1,56 @@
-Amateur Radio macros for Terminal 2.0\mDE DE LX1YZ\mCQ (Amtor)CQ DE LX1YZ (LXYZ) 9CQ DE LX1YZ (LXYZ) 8CQ DE LX1YZ (LXYZ) 7CQ DE LX1YZ (LXYZ) 6CQ DE LX1YZ (LXYZ) 5CQ DE LX1YZ (LXYZ) 4CQ DE LX1YZ (LXYZ) 3CQ DE LX1YZ (LXYZ) 2CQ DE LX1YZ (LXYZ) 1CQ DE LX1YZ (LXYZ) 1PLEASE ANSWER IN ARQ\mCQ (RTTY)RYRYRYRYRYRYRYRYRYRYRYCQ CQ DE LX1YZ LX1YZ 9CQ CQ DE LX1YZ LX1YZ 8CQ CQ DE LX1YZ LX1YZ 7CQ CQ DE LX1YZ LX1YZ 6CQ CQ DE LX1YZ LX1YZ 5CQ CQ DE LX1YZ LX1YZ 4CQ CQ DE LX1YZ LX1YZ 3CQ CQ DE LX1YZ LX1YZ 2CQ CQ DE LX1YZ LX1YZ 1CQ CQ DE LX1YZ LX1YZ 0PSE K\mQTH & nameMy QTH is Steinfort and my name is Erny.\mDescriptionStation description of LX1YZLocator: JN29WPTransceiver: Ten-Tec Omni COutput power: 100 WattsAntenna: 3 element Yagi and dipolesModem: Kantronics KAMComputer: Apple Macintosh\mByeThank you for the contact. 73 bye bye.\mRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRY
+Amateur Radio macros for Terminal 2.0
+
+\mDE
+ DE LX1YZ
+
+\mCQ (Amtor)
+
+CQ DE LX1YZ (LXYZ) 9
+CQ DE LX1YZ (LXYZ) 8
+CQ DE LX1YZ (LXYZ) 7
+CQ DE LX1YZ (LXYZ) 6
+CQ DE LX1YZ (LXYZ) 5
+CQ DE LX1YZ (LXYZ) 4
+CQ DE LX1YZ (LXYZ) 3
+CQ DE LX1YZ (LXYZ) 2
+CQ DE LX1YZ (LXYZ) 1
+CQ DE LX1YZ (LXYZ) 1
+PLEASE ANSWER IN ARQ
+
+\mCQ (RTTY)
+
+RYRYRYRYRYRYRYRYRYRYRY
+CQ CQ DE LX1YZ LX1YZ 9
+CQ CQ DE LX1YZ LX1YZ 8
+CQ CQ DE LX1YZ LX1YZ 7
+CQ CQ DE LX1YZ LX1YZ 6
+CQ CQ DE LX1YZ LX1YZ 5
+CQ CQ DE LX1YZ LX1YZ 4
+CQ CQ DE LX1YZ LX1YZ 3
+CQ CQ DE LX1YZ LX1YZ 2
+CQ CQ DE LX1YZ LX1YZ 1
+CQ CQ DE LX1YZ LX1YZ 0
+PSE K
+
+\mQTH & name
+
+My QTH is Steinfort and my name is Erny.
+
+\mDescription
+
+Station description of LX1YZ
+Locator: JN29WP
+Transceiver: Ten-Tec Omni C
+Output power: 100 Watts
+Antenna: 3 element Yagi and dipoles
+Modem: Kantronics KAM
+Computer: Apple Macintosh
+
+\mBye
+
+Thank you for the contact. 73 bye bye.
+
+\mRY
+
+RYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRYRY
+
