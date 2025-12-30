@@ -648,7 +648,7 @@ static short SAFlush(void)
 
 /* ----- Send a failure packet to the host ----------------------------- */
 
-static void SendFailure(register Byte code)
+void SendFailure(register Byte code)
 {
 	register Byte *p;
 

@@ -465,7 +465,7 @@ void SerialAbort(void)
 
 /* ----- Send buffer --------------------------------------------------- */
 
-static pascal void SendComplete(void);
+extern pascal void SendComplete(void);
 
 #ifdef THINK_C
 static pascal void SendComplete()

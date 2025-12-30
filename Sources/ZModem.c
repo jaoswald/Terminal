@@ -1534,7 +1534,7 @@ done:
 
 /* ----- Session cleanup ----------------------------------------------- */
 
-static SessionCleanup (void)
+static void SessionCleanup (void)
 {
 	register short retry;
 	HEADER hdr;

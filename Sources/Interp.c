@@ -246,7 +246,7 @@ INTEGER *params;
 
 /* ----- Allocate memory on the stack ---------------------------------- */
 
-static Byte *allocate(size)
+Byte *allocate(size)
 register long size;
 {
 	register Byte *sp = StackPtr;
@@ -379,7 +379,7 @@ INTEGER SI_Interpret()
 
 /* ----- Return the next token ----------------------------------------- */
 
-static Byte gettoken()
+Byte gettoken()
 {
 	register Byte tok;
 
@@ -395,7 +395,7 @@ static Byte gettoken()
 
 /* ----- Test to see if current word is a one character token ---------- */
 
-static Byte istoken()
+Byte istoken()
 {
 	register Byte *t = tokens;	/* Single character tokens */
 	register Byte t2;
@@ -458,7 +458,7 @@ static Byte istoken()
 
 /* ----- Test word for a keyword --------------------------------------- */
 
-static Byte iskeyword()
+Byte iskeyword()
 {
 	register struct keywords *k = kwds;
 
@@ -472,7 +472,7 @@ static Byte iskeyword()
 
 /* ----- Test for an ident (or constant) ------------------------------- */
 
-static Byte isident()
+Byte isident()
 {
 	register Byte *wd = tptr;
 	register long n = 0;
@@ -501,7 +501,7 @@ static Byte isident()
 
 /* ----- Get the next word from the input stream ----------------------- */
 
-static Byte getword()
+Byte getword()
 {
 	register Byte *wd = tptr;
 	register Byte c;
@@ -545,7 +545,7 @@ static Byte getword()
 
 /* ----- Escape sequence in litteral constant or string ---------------- */
 
-static Byte h2()
+Byte h2()
 {
 	register Byte v = 0;
 	register short n = 2;
@@ -564,7 +564,7 @@ static Byte h2()
 	return v;
 }
 
-static Byte escseq()
+Byte escseq()
 {
 	register Byte c = getcx();
 
@@ -582,7 +582,7 @@ static Byte escseq()
 
 /* ----- Get a character from the input stream ------------------------- */
 
-static Byte getok()
+Byte getok()
 {
 	register short c;
 	register short c1;
@@ -606,7 +606,7 @@ static Byte getok()
 
 /* ----- Read a character from input, error if EOF --------------------- */
 
-static Byte getcx()
+Byte getcx()
 {
 	register short c;
 
@@ -617,7 +617,7 @@ static Byte getcx()
 
 /* ----- A function is called thru a pointer --------------------------- */
 
-static INTEGER pfunction(fp, sp)
+INTEGER pfunction(fp, sp)
 register Byte *fp;					/* Points to function definition */
 SYMBOL *sp;
 {
@@ -676,7 +676,7 @@ SYMBOL *sp;
 
 /* ----- Execute one statement or a {} block --------------------------- */
 
-static void statements(sp)
+void statements(sp)
 register SYMBOL *sp;
 {
 	if (iftoken(LBRACE)) {
@@ -688,7 +688,7 @@ register SYMBOL *sp;
 
 /* ----- Execute a {} statement block ---------------------------------- */
 
-static void compound_statement(sp)
+void compound_statement(sp)
 register SYMBOL *sp;
 {
 	register short tok;
@@ -743,7 +743,7 @@ register SYMBOL *sp;
 
 /* ----- Execute a single statement ------------------------------------ */
 
-static void statement(sp)
+void statement(sp)
 register SYMBOL *sp;
 {
 	register INTEGER rtn;
@@ -875,7 +875,7 @@ register SYMBOL *sp;
 
 /* ----- Bypass statement(s) ------------------------------------------- */
 
-static void skip_statements(sp)
+void skip_statements(sp)
 register SYMBOL *sp;
 {
 	skipping++;			/* Semaphore that suppresses assignments, */
@@ -885,7 +885,7 @@ register SYMBOL *sp;
 
 /* ----- Recursive descent expression analyzer ------------------------- */
 
-static void rvalue(env)			/* Read value */
+void rvalue(env)			/* Read value */
 register ENV *env;
 {
 	register short character;
@@ -918,7 +918,7 @@ register ENV *env;
 	}
 }
 
-static void store(env, val)		/* Store value */
+void store(env, val)		/* Store value */
 register ENV *env;
 register INTEGER val;
 {
@@ -948,7 +948,7 @@ register INTEGER val;
 		error(SYNTAX, EmptyStr);
 }
 
-static INTEGER expression(sp)	/* Evaluate expression */
+INTEGER expression(sp)	/* Evaluate expression */
 register SYMBOL *sp;
 {
 	ENV env;
@@ -959,7 +959,7 @@ register SYMBOL *sp;
 	return env.value;		/* Return expression result */
 }
 
-static void assign(env)		/* Handle assignments (=) */
+void assign(env)		/* Handle assignments (=) */
 register ENV *env;
 {
 	ENV env2;
@@ -973,7 +973,7 @@ register ENV *env;
 	}
 }
 
-static void or(env)		/* Handle logical or (||) */
+void or(env)		/* Handle logical or (||) */
 register ENV *env;
 {
 	ENV env2;
@@ -988,7 +988,7 @@ register ENV *env;
 	}
 }
 
-static void and(env)	/* Handle logical and (&&) */
+void and(env)	/* Handle logical and (&&) */
 register ENV *env;
 {
 	ENV env2;
@@ -1003,7 +1003,7 @@ register ENV *env;
 	}
 }
 
-static void eq(env)		/* Handle equal (==) and not equal (!=) */
+void eq(env)		/* Handle equal (==) and not equal (!=) */
 register ENV *env;
 {
 	register short tok;
@@ -1032,7 +1032,7 @@ register ENV *env;
 		}
 }
 
-static void le(env)		/* Handle relational operators: <= >= < > */
+void le(env)		/* Handle relational operators: <= >= < > */
 register ENV *env;
 {
 	register short tok;
@@ -1075,7 +1075,7 @@ register ENV *env;
 		}
 }
 
-static void plus(env)			/* Handle addition and substraction */
+void plus(env)			/* Handle addition and substraction */
 register ENV *env;
 {
 	register short tok;
@@ -1121,7 +1121,7 @@ register ENV *env;
 		}
 }
 
-static void mult(env)		/* Handle multiplication, division, modulo */
+void mult(env)		/* Handle multiplication, division, modulo */
 register ENV *env;
 {
 	register short tok;
@@ -1172,7 +1172,7 @@ register ENV *env;
 	trailing --
 */
 
-static void unary(env)
+void unary(env)
 register ENV *env;
 {
 	ENV env2;
@@ -1274,7 +1274,7 @@ register ENV *env;
 	}
 }
 
-static void variable(env)	/* Variables, arrays and functions */
+void variable(env)	/* Variables, arrays and functions */
 register ENV *env;
 {
 	register short tok;
@@ -1320,7 +1320,7 @@ register ENV *env;
 	}
 }
 
-static void primary(env)	/* Constants, strings and identifiers */
+void primary(env)	/* Constants, strings and identifiers */
 register ENV *env;
 {
 	short tok;
@@ -1365,7 +1365,7 @@ register ENV *env;
 
 /* ----- Skip the tokens between a matched pair ------------------------ */
 
-static void skippair(ltok, rtok)
+void skippair(ltok, rtok)
 register Byte ltok;
 register Byte rtok;
 {
@@ -1386,7 +1386,7 @@ register Byte rtok;
 
 /* ----- A specified token is required next ---------------------------- */
 
-static void needtoken(tk)
+void needtoken(tk)
 register Byte tk;
 {
 	if (nexttoken() != tk)
@@ -1395,7 +1395,7 @@ register Byte tk;
 
 /* ----- Test for a specified token next in line ----------------------- */
 
-static Boolean iftoken(tk)
+Boolean iftoken(tk)
 register Byte tk;
 {
 	if (nexttoken() == tk)
@@ -1406,7 +1406,7 @@ register Byte tk;
 
 /* ----- Get the next token from the buffer ---------------------------- */
 
-static Byte nexttoken()
+Byte nexttoken()
 {
 	while (*tptr == LINENO)
 		tptr++;
@@ -1415,7 +1415,7 @@ static Byte nexttoken()
 
 /* ----- Add a symbol to the symbol table ------------------------------ */
 
-static SYMBOL *addsymbol(s, name, value, size, ind)
+SYMBOL *addsymbol(s, name, value, size, ind)
 register SYMBOL *s;				/* Start of local symbol table */
 register Byte *name;			/* Pointer to symbol name */
 register INTEGER value;			/* Value of symbol */
@@ -1436,7 +1436,7 @@ register Byte ind;				/* Indirection level */
 
 /* ----- Find a symbol on the symbol table (error if not found) -------- */
 
-static SYMBOL *findsymbol(s, sym, ends)
+SYMBOL *findsymbol(s, sym, ends)
 register SYMBOL *s;				/* Start of local symbol table */
 register Byte *sym;				/* Symbol name */
 register SYMBOL *ends;			/* End of local symbol table */
@@ -1448,7 +1448,7 @@ register SYMBOL *ends;			/* End of local symbol table */
 
 /* ----- Test for a symbol on the symbol table ------------------------- */
 
-static SYMBOL *ifsymbol(s, sym, sp)
+SYMBOL *ifsymbol(s, sym, sp)
 register SYMBOL *s;				/* Start of local symbol table */
 register Byte *sym;				/* Symbol name */
 register SYMBOL *sp;			/* End of local symbol table */
@@ -1463,7 +1463,7 @@ register SYMBOL *sp;			/* End of local symbol table */
 
 /* ----- Post an error to the shell ------------------------------------ */
 
-static void error(erno, s)
+void error(erno, s)
 register enum errs erno;
 register Byte *s;
 {
@@ -1486,7 +1486,7 @@ register Byte *s;
 
 /* ----- Convert token to string (for error messages) ------------------ */
 
-static Byte *token2str(token)
+Byte *token2str(token)
 register short token;
 {
 	static Byte s[2];
@@ -1549,7 +1549,7 @@ register short token;
 
 /* ----- Convert long to string ---------------------------------------- */
 
-static void x2str(num, str)
+void x2str(num, str)
 register long num;				/* Number to convert */
 register Byte *str;				/* String for result */
 {
