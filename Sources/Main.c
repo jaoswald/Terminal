@@ -555,7 +555,7 @@ static void AbortCheck(
 
 static void StripBS(register Byte *s)
 {
-	register Byte t[256];
+	Byte t[256];
 	register Byte *p, *q;
 	register Byte c;
 	register short n;
@@ -580,7 +580,7 @@ static void StripBS(register Byte *s)
 void CheckEvents(void)
 {
 	register long count;
-	register Byte buffer[256];
+	Byte buffer[256];
 	EventRecord event;
 
 	/* Make sure events and receive buffer are checked at least once */

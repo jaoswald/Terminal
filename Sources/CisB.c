@@ -868,8 +868,8 @@ static short SendFile(
 
 static short TransferFile(void)
 {
-    register short err;
-    register Byte name[64];
+    short err;
+    Byte name[64];
 
 	if ((RBuffer[1] != 'D' && RBuffer[1] != 'U') ||
 			(RBuffer[2] != 'A' && RBuffer[2] != 'B')) {

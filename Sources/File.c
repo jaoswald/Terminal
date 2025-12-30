@@ -187,7 +187,7 @@ short pascal SendTextFile(
 {
 	register short err;			/* Error code */
 	register long count;		/* File read count */
-	register Byte buffer[256];	/* Transmit buffer */
+	Byte buffer[256];	/* Transmit buffer */
 	HParamBlockRec p;			/* Used for PBRead() */
 	long mark = 0;				/* Current file position */
 	long time;					/* How long it takes */
@@ -287,7 +287,7 @@ static short TypeText(
 	register long n)			/* Number of characters in text */
 {
 	register long count;		/* File read count */
-	register Byte buffer[256];	/* Transmit buffer */
+	Byte buffer[256];	/* Transmit buffer */
 	short req;					/* Max byte count */
 	Boolean cr;					/* Look for CR */
 	short err;					/* Error code */
@@ -485,7 +485,7 @@ void Make(void)
 {
 	SFReply r1, r2;
 	register Byte *suffix;
-	register Byte name[256];
+	Byte name[256];
 	register long n;
 	register short err;
 
@@ -696,9 +696,9 @@ Boolean RunScript(
 
 Boolean DoMenuScript(register short item)
 {
-	register Byte name[256];
+	Byte name[256];
 
-	GetItem(GetMenu(SCRIPT), item, name);
+	GetMenuItemText(GetMenu(SCRIPT), item, name);
 	Append(name, MyString(STR_G, G_SUFFIX));
 	return RunScript(Settings.scriptVolume, Settings.scriptDirectory, name, item);
 }
@@ -710,7 +710,7 @@ void SI_Error(
 	register Byte *s,
 	register short line)
 {
-	register Byte message[256];
+	Byte message[256];
 
 	erno += 2;
 	if (*s) {

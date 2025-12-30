@@ -346,13 +346,13 @@ pascal void DrawUserLine(
 	Handle item;
 	Rect box;
 
-	GetDItem(window, number, &type, &item, &box);		/* User item */
-	PenPat(QD(gray));
+	GetDialogItem(window, number, &type, &item, &box);		/* User item */
+	PenPat(&QD(gray));
 	MoveTo(box.left, box.top);
 	LineTo(box.right, box.top);
 	MoveTo(box.left, box.bottom);
 	LineTo(box.right, box.bottom);
-	PenPat(QD(black));
+	PenPat(&QD(black));
 }
 
 /* ----- Convert to full path name ------------------------------------- */
@@ -363,7 +363,7 @@ static short Path1name(
 	register CInfoPBRec *cat)
 {
 	register short err;
-	register Byte s[66];
+	Byte s[66];
 
 	cat->dirInfo.ioNamePtr = (StringPtr)s;
 	cat->dirInfo.ioDrDirID = directory;
@@ -406,7 +406,7 @@ short VolumeId(
 		p.volumeParam.ioNamePtr = (StringPtr)name;
 		p.volumeParam.ioVRefNum = *volume;
 	} else {		/* Get corresponding volume reference number */
-		register Byte s[32];
+		Byte s[32];
 		memcpy(s, name, name[0] + 1);
 		s[++(s[0])] = ':';
 		p.volumeParam.ioNamePtr = (StringPtr)s;

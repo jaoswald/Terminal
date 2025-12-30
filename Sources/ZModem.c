@@ -1007,7 +1007,7 @@ static void Update (register Byte *text, register long error)
 
 static void MakeInfo(void)
 {
-	register Byte s[256];
+	Byte s[256];
 	Byte *c;
 	Byte *v;
 
@@ -1430,7 +1430,7 @@ static short SendFileInfo (
 	unsigned long *startpos)	/* Start position */
 {
 	register Byte *p;
-	register Byte s[30];
+	Byte s[30];
 	register short retry;
 	register short err;
 	Byte *message;

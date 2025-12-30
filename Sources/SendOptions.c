@@ -33,7 +33,7 @@
 void SendOptions(void)
 {
 	register DialogPtr dialog;
-	register Byte str[256];
+	Byte str[256];
 	short number;
 
 	CenterDialog('DLOG', DLOG_SEND);
@@ -44,7 +44,7 @@ void SendOptions(void)
 	SetEText(dialog, E_LINE_DELAY, str);
 	NumToString(Settings.chardelay, str);
 	SetEText(dialog, E_CHAR_DELAY, str);
-	SelIText(dialog, E_PROMPT, 0, 32767);
+	SelectDialogItemText(dialog, E_PROMPT, 0, 32767);
 	SetUserItem(dialog, U_TITLELINE, (ProcPtr)DrawUserLine);
 	ShowWindow(dialog);
 	do {

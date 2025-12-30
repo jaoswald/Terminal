@@ -55,7 +55,7 @@ void Statistics(
 	register long seconds,		/* Time for transfer in seconds */
 	register short error)		/* Error code */
 {
-	register Byte s[256];
+	Byte s[256];
 	Byte sec[256];
 
 	SysBeep(1);

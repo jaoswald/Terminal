@@ -64,7 +64,7 @@ static pascal void DrawPopUp(	/* Called as user item in dialog */
 	register DialogPtr dialog,
 	register short item)
 {
-	register Byte text[256];
+	Byte text[256];
 	PenState savePen;
 	Rect box;
 	FontInfo info;

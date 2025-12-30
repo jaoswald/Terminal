@@ -122,7 +122,7 @@ static void MakeFileInfo(
 {
 	register Byte *max = buffer + 128;
 	register short n;
-	register Byte s[20];
+	Byte s[20];
 
 	if (size) {
 		if (n = *name) {
@@ -145,7 +145,7 @@ static void MakeInfo(
 	register Boolean k,			/* 1K option */
 	register short vers)		/* MacBinary version */
 {
-	register Byte s[256];
+	Byte s[256];
 
 	if (Settings.batch)
 		memcpy(s, YModemStr, YModemStr[0] + 1);

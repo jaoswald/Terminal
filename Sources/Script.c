@@ -177,7 +177,7 @@ static INTEGER SI_save(INTEGER params[])
 static INTEGER SI_send(INTEGER params[])
 {
 	register INTEGER result;
-	register Byte name[256];
+	Byte name[256];
 	short volume;
 	long directory;
 	OSType creator, type;

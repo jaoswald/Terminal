@@ -86,7 +86,7 @@ void MonitorDump(
 	register Byte *buffer,
 	long count)
 {
-	register Byte s[255];
+	Byte s[255];
 	register Byte b;
 	register short n;
 	register Byte *max = buffer + count;
@@ -123,7 +123,7 @@ void MonitorDump(
 
 void MonitorText(Byte *t)
 {
-	register Byte s[255];
+	Byte s[255];
 	long count;
 
 	if (!Ref)

@@ -45,13 +45,13 @@ static Boolean Verify(
 	register long min,
 	register long max)
 {
-	register Byte str[256];
+	Byte str[256];
 
 	GetEText(dialog, number, str);
 	StringToNum(str, value);
 	if (*value < min || *value > max) {
 		SysBeep(1);
-		SelIText(dialog, number, 0, 32767);
+		SelectDialogItemText(dialog, number, 0, 32767);
 		return TRUE;
 	}
 	return FALSE;
@@ -62,7 +62,7 @@ static Boolean Verify(
 void ZOptions(void)
 {
 	register DialogPtr dialog;
-	register Byte str[256];
+	Byte str[256];
 	short number;
 	long timeout, buffer, retries, packet, window, zcrcq;
 

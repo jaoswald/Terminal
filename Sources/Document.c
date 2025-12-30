@@ -131,13 +131,13 @@ void DrawDocument(
 
 static void DrawDocumentX(register DocumentPeek window)
 {
-	register long line1, line2;
-	register short v;
-	register Boolean lastLine;
-	register Byte s[256];
+	long line1, line2;
+	short v;
+	Boolean lastLine;
+	Byte s[256];
 	Rect r;
 
-	line2 = (line1 = GetCtlValue(window->vs)) + window->linesPage;
+	line2 = (line1 = GetControlValue(window->vs)) + window->linesPage;
 	MoveTo(r.left = window->cursor0.h, v = window->cursor0.v);
 	TextMode(srcOr);
 	r.right = r.left + (window->rect.right - window->rect.left);
@@ -381,7 +381,7 @@ void NewCharacters(
 
 void NewKey(register Byte key)
 {
-	register Byte buffer[2];
+	Byte buffer[2];
 	register long count;
 
 	if (key == BS)
