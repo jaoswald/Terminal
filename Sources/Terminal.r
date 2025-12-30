@@ -1120,6 +1120,99 @@ resource 'ALRT' (128, purgeable) {
   noAutoCenter
 };
 
+resource 'STR#' (128, locked, preload) {
+{ "Capture text in file:",
+  "Capture",
+  "Save capture buffer as:",
+  "Buffer",
+  "Send@",    // TODO: fix reliance on 'Default' CDEF
+  "Receive@", // TODO: fix reliance on 'Default' CDEF
+  "Save file to receive as:",
+  "Download",
+  "Transmit@", // TODO: fix reliance on 'Default' CDEF
+  ".BIN",
+  "Make@", // TODO: fix reliance on 'Default' CDEF
+  "Output file name",
+  "Extract@", // TODO: fix reliance on 'Default' CDEF
+  "Save file extracted as:",
+  "Terminal Settings",
+  "Terminal",
+  "Select@", // TODO: fix reliance on 'Default' CDEF
+  "Script@", // TODO: fix reliance on 'Default' CDEF
+  ".s",
+  "Terminal Folder",
+  "Macros.m",
+  ".m",
+  "Macros@", // TODO: fix reliance on 'Default' CDEF
+  "Open@", // TODO: fix reliance on 'Default' CDEF
+  "Save@", // TODO: fix reliance on 'Default' CDEF
+  "Append@", // TODO: fix reliance on 'Default' CDEF
+  "Kiss@"
+  }
+};
+
+resource 'STR#' (129, locked, preload) {
+{
+  "Verified",
+  "Timeout",
+  "Invalid character",
+  "Repeated",
+  "Wrong Checksum/CRC",
+  "Block number error",
+  "Wrong block number",
+  "X-Modem ",
+  "CRC ",
+  "checksum ",
+  "(TEXT)",
+  "(MacBinary I)",
+  "(MacBinary II)",
+  "Sending text file: %s",
+  "Receiving text file: %s",
+  "Receiving file:",
+  "Transmitting file:"
+  "1K ",
+  "Compuserve B file:",
+  "Upload ",
+  "Download ",
+  "End of transmission",
+  "Re-verified",
+  "Y-Modem ",
+  "Negociating", // [sic]
+  "QuickB ",
+  "SendAhead ",
+  "Sending clipboard"
+}
+};
+
+resource 'STR#' (130, locked, preload) {
+{ "Error #",
+  "File transfer completed: %l bytes in %s [%l bytes/sec] (err=%i)",
+  "File transfer in progress",
+  "Unsupported configuration"
+}
+};
+
+resource 'STR#' (131, locked, preload) {
+{ "\$d2%s\$d3 %s on line %i",
+  "%s on line %i",
+  "Unexpected end of file",
+  "unrecognized",
+  "duplicate identifier",
+  "Symbol table full",
+  "Out of heap memory",
+  "undeclared identifier",
+  "Syntax error",
+  "unmatched error",
+  "missing",
+  "Not a function",
+  "out of place",
+  "Token buffer overflow",
+  "Divide by zero",
+  "Pointer error",
+  "Parameter error"
+}
+};
+
 resource 'FREF' (128, purgeable) {
   'APPL',
   0,
