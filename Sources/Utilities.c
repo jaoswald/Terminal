@@ -83,7 +83,7 @@ register short mode;
 	GetPenState(&state);
 	GetDialogItem(dialog, item, &kind, &h, &r);
 	PenMode(mode);
-	PenPat(QD(black));
+	PenPat(&QD(black));
 	PenSize(3, 3);
 	InsetRect(&r, -4, -4);
 	FrameRoundRect(&r, 16, 16);
@@ -324,16 +324,16 @@ pascal void DrawUserFrame(
 	Handle item;
 	Rect box, boxT;
 
-	PenPat(QD(gray));
 	GetDialogItem(window, number - 1, &type, &item, &boxT);	/* Text */
 	GetDialogItem(window, number, &type, &item, &box);		/* User item */
+	PenPat(&QD(gray));
 	MoveTo(boxT.right + 2, box.top);
 	LineTo(box.right, box.top);
 	LineTo(box.right, box.bottom);
 	LineTo(box.left, box.bottom);
 	LineTo(box.left, box.top);
 	LineTo(boxT.left - 3, box.top);
-	PenPat(QD(black));
+	PenPat(&QD(black));
 }
 
 /* ----- Draw user item in dialog -------------------------------------- */
