@@ -121,16 +121,16 @@ resource 'MENU' (133) {
 	{
 	"Load macros\$c9", noIcon, "L", noMark, plain,    // $c9 = `...`
 	"-", noIcon, noKey, noMark, plain,
-	"", noIcon, "0", noMark, plain,
-	"", noIcon, "1", noMark, plain,
-	"", noIcon, "2", noMark, plain,
-	"", noIcon, "3", noMark, plain,
-	"", noIcon, "4", noMark, plain,
-	"", noIcon, "5", noMark, plain,
-	"", noIcon, "6", noMark, plain,
-	"", noIcon, "7", noMark, plain,
-	"", noIcon, "8", noMark, plain,
-	"", noIcon, "9", noMark, plain
+	"\$00", noIcon, "0", noMark, plain,
+	"\$00", noIcon, "1", noMark, plain,
+	"\$00", noIcon, "2", noMark, plain,
+	"\$00", noIcon, "3", noMark, plain,
+	"\$00", noIcon, "4", noMark, plain,
+	"\$00", noIcon, "5", noMark, plain,
+	"\$00", noIcon, "6", noMark, plain,
+	"\$00", noIcon, "7", noMark, plain,
+	"\$00", noIcon, "8", noMark, plain,
+	"\$00", noIcon, "9", noMark, plain
 	}
 };
 
@@ -387,7 +387,7 @@ resource 'DITL' (133, purgeable) {
 	{147, 148, 167, 208},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"    // TODO: fix reliance on 'Default' CDEF
 	},
 	{147, 52, 167, 112},
 	Button {
@@ -432,7 +432,7 @@ resource 'DITL' (133, purgeable) {
 	{60, 174, 76, 234},
 	RadioButton {
 		enabled,
-		"Ê5"
+		"\$ca5"  // $ca = non-breaking space
 	},
 	{75, 174, 91, 234},
 	RadioButton {
@@ -493,7 +493,7 @@ resource 'DITL' (134, purgeable) {
 	{121, 288, 141, 348},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"     // TODO: fix reliance on 'Default' CDEF
 	},
 	{121, 214, 141, 274},
 	Button {
@@ -547,7 +547,7 @@ resource 'DITL' (135, purgeable) {
 	{239, 152, 259, 212},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"    // TODO: fix reliance on 'Default' CDEF
 	},
 	{239, 52, 259, 112},
 	Button {
@@ -582,7 +582,7 @@ resource 'DITL' (135, purgeable) {
 	{160, 7, 176, 149},
 	CheckBox {
 		enabled,
-		"Òcontrol-GÓ beeps"
+		"\$d2control-G\$d3 beeps"  // $d2,$d3 are open/close double-quote marks
 	},
 	{205, 17, 221, 89},
 	RadioButton {
@@ -635,12 +635,12 @@ resource 'DITL' (135, purgeable) {
 	{108, 8, 124, 190},
 	StaticText {
 		disabled,
-		"Code for ÒBackspaceÓ key:"
+		"Code for \$d2Backspace\$d3 key:"  // $d2,$d3 are open/close double-quote marks
 	},
 	{133, 8, 149, 190},
 	StaticText {
 		disabled,
-		"Code for Ò ` Ó key:"
+		"Code for \$d2 ` \$d3 key:"
 	}
 	}
 };
@@ -692,7 +692,7 @@ resource 'DITL' (130, purgeable) {
 	{189, 139, 209, 199},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"  // TODO: fix reliance on 'Default' CDEF
 	},
 	{189, 63, 209, 123},
 	Button {
@@ -769,7 +769,7 @@ resource 'DITL' (128, purgeable) {
 	{44, 223, 64, 283},
 	Button {
 		enabled,
-		"Ok@"
+		"Ok@"  // TODO: fix reliance on 'Default' CDEF
 	},
 	{5, 45, 37, 283},
 	StaticText {
@@ -789,7 +789,7 @@ resource 'DITL' (132, purgeable) {
 	{196, 230, 216, 290},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"  // TODO: fix reliance on 'Default' CDEF
 	},
 	{165, 230, 185, 290},
 	Button {
@@ -842,7 +842,7 @@ resource 'DITL' (136, purgeable) {
 	{243, 157, 263, 217},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"  // TODO: fix reliance on 'Default' CDEF
 	},
 	{243, 64, 263, 124},
 	Button {
@@ -949,7 +949,7 @@ resource 'DITL' (137, purgeable) {
 	{106, 321, 126, 381},
 	Button {
 		enabled,
-		"OK@"
+		"OK@"  // TODO: fix reliance on 'Default' CDEF
 	},
 	{73, 320, 93, 380},
 	Button {
@@ -959,8 +959,7 @@ resource 'DITL' (137, purgeable) {
 	{31, 4, 47, 389},
 	CheckBox {
 		enabled,
-		"Recognize and use MacBinary format for n"
-		"on-TEXT files"
+		"Recognize and use MacBinary format for non-TEXT files"
 	},
 	{72, 16, 87, 175},
 	CheckBox {
