@@ -14,7 +14,7 @@
 #include <ctype.h>
 #include <string.h>
 
-#include "interp.h"
+#include "Interp.h"
 
 #define	FALSE	0
 #define TRUE	1

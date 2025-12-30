@@ -32,7 +32,7 @@
 #include "FormatStr.h"
 #include "Macros.h"
 #include "CancelDialog.h"
-#include "Crc.h"
+#include "CRC.h"
 #include "Util.h"
 
 #define CAN		0x18	/* Cntrl-X */
