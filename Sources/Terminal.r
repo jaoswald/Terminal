@@ -1175,6 +1175,66 @@ resource 'CNFG' (128) {
     "Monaco" /* pstring font name */
 };
 
+/* a ResEdit template for editing resources; the name of the TMPL resource
+   should match the Macintosh resource type ID which takes the template */
+
+type 'TMPL' {
+  array {
+    pstring;  // name of the field
+    literal longint;  // type of the field
+
+    // See ResEdit Reference, Chapter 5
+    //
+    // 'DBYT', 'DWRD', 'DLNG': the field is decimal byte/2-byte word/4-byte long
+    // 'HBYT', 'HWRD', 'HLNG':              hex byte/word/long
+    // 'AWRD', 'ALNG'        : align to a word, long boundary
+    // 'FBYT','FWRD','FLNG'  : field is a zero-filled byte/word/long
+    // 'HEXD'                : can only appear last, field is a hex dump of
+    //                         remaining bytes
+    // 'PSTR' : field is a Pascal string (first byte is length)
+    // 'LSTR' : field is 'long' string (first 4 bytes are length)
+    // 'WSTR' : field is a 'word'-length string (first 2-byte word is length)
+    // 'ESTR' : pascal string padded to Even or Odd length (used in DITL)
+    // 'CSTR' : C null-terminated string.
+    // 'ECST', 'OCST': C null-terminated string, padded to Even or Odd length.
+    // 'BOOL' : two-byte boolean
+    // 'BBIT' : binary bit (must appear in multiples of 8)
+    // 'TNAM' : 4-character OSType name.
+    // 'CHAR' : single character
+    // 'RECT' : 8 byte Quickdraw Rect
+    // 'Hnnn' : nnn is hex number, shows that many bytes in hexadecimal.
+    // 'Cnnn' : nnn is hex number, C string occupying nnn byte field.
+    // 'P0nn' : nn is a hex number, Pascal-style string taking nn+1 (length)
+    //          bytes.
+    //
+    // List sequences:
+    // 'LSTZ'...'LSTE' 'List Zero', list terminated by a 0 byte, as in 'MENU'
+    // 'ZCNT' 'LSTC'..'LSTE': zero count/list count-list end
+    //                        list preceded by zero-based (N-1) word count
+    //                        as in 'DITL'
+    // 'OCNT' 'LSTC'..'LSTE': one count/list count-list end
+    //                        list preceded by a 1-based word count,
+    //                        as in STR#
+    // 'LSTB'..'LSTE': List begin/list end: terminated by the end of the
+    //                  resource (as in 'acur' and 'APPL')
+  };
+};
+
+// ResEdit template for the 'CNFG' resource type defined above.
+resource 'TMPL' (128, "CNFG") {
+ {
+  "Reserved", 'DWRD',
+  "Font size", 'DWRD',
+  "Lines", 'DWRD',
+  "Colums" /* sic */, 'DWRD',
+  "Terminal buffer size", 'DLNG',
+  "Serial input buffer size", 'DLNG',
+  "Reserved", 'DLNG',
+  "Script memory size", 'DLNG',
+  "Font name", 'PSTR'
+ }
+};
+
 resource 'vers' (1, purgeable) {
  $02, $20, /* version 2.2.0 */
  final,    /* release stage */
