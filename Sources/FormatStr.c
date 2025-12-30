@@ -32,6 +32,8 @@
 #pragma segment Main2
 #endif
 
+#include <stdarg.h>
+
 Byte *FormatStr(Byte *string, Byte *template);
 #include "Util.h"
 Byte *SFormatStr(Byte *string, Byte *template, long *param);

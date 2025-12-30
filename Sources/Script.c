@@ -11,6 +11,9 @@
 #pragma segment Main2
 #endif
 
+#include <ctype.h>
+#include <string.h>
+
 #include "Interp.h"
 #include "Text.h"
 #include "Main.h"

@@ -11,6 +11,9 @@
 #pragma segment Main2
 #endif
 
+#include <ctype.h>
+#include <string.h>
+
 #include "interp.h"
 
 #define	FALSE	0

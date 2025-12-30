@@ -11,6 +11,8 @@
 #pragma segment Main2
 #endif
 
+#include <string.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Document.h"

@@ -19,6 +19,8 @@
 #pragma segment Init
 #endif
 
+#include <string.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Strings.h"

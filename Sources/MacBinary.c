@@ -11,6 +11,8 @@
 #pragma segment Main2
 #endif
 
+#include <string.h>
+
 #include "MacBinary.h"
 #include "CRC.h"
 #include "Utilities.h"

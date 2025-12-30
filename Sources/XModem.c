@@ -11,6 +11,8 @@
 #pragma segment XModem
 #endif
 
+#include <string.h>
+
 #include "XModem.h"
 #include "CRC.h"
 #include "Strings.h"

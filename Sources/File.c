@@ -11,6 +11,9 @@
 #pragma segment Main2
 #endif
 
+#include <setjmp.h>
+#include <string.h>
+
 #include "File.h"
 #include "Text.h"
 #include "Main.h"

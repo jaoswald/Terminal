@@ -11,6 +11,8 @@
 #pragma segment CisB
 #endif
 
+#include <string.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "CisB.h"

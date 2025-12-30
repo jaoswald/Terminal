@@ -11,6 +11,8 @@
 #pragma segment Main2
 #endif
 
+#include <string.h>
+
 #include "Strings.h"
 #include "Utilities.h"
 #include "MySF.h"

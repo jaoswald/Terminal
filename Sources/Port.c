@@ -13,6 +13,7 @@
 
 #define CREFNUM(x)	x.ioCRefNum
 
+#include <string.h>
 #include "Port.h"
 #include "Text.h"
 #include "Main.h"

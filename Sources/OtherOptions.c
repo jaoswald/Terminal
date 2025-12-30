@@ -11,6 +11,8 @@
 #pragma segment Options
 #endif
 
+#include <string.h>
+
 #include "Options.h"
 #include "Strings.h"
 #include "Utilities.h"

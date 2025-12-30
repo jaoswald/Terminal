@@ -11,6 +11,8 @@
 #pragma segment About
 #endif
 
+#include <string.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Utilities.h"

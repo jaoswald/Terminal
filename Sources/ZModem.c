@@ -11,6 +11,9 @@
 #pragma segment ZModem
 #endif
 
+#include <setjmp.h>
+#include <string.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Port.h"
