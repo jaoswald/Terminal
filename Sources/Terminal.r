@@ -1120,6 +1120,35 @@ resource 'ALRT' (128, purgeable) {
   noAutoCenter
 };
 
+resource 'FREF' (128, purgeable) {
+  'APPL',
+  0,
+  ""
+};
+
+resource 'FREF' (129, purgeable) {
+  'ET_O',
+  1,
+  ""
+};
+
+resource 'FREF' (130, purgeable) {
+  'ET_B',
+  2,
+  ""
+};
+
+resource 'FREF' (131, purgeable) {
+  'TEXT',
+  3,
+  ""
+};
+
+resource 'FREF' (132, purgeable) {
+  'ET_Z',
+  4,
+  ""
+};
 
 resource 'vers' (1, purgeable) {
  $02, $20, /* version 2.2.0 */
