@@ -37,6 +37,7 @@
 #include <MacTypes.h>
 #include <NumberFormatting.h>
 
+#include "StrUtil.h"
 Byte *FormatStr(Byte *string, Byte *template);
 #include "Util.h"
 Byte *SFormatStr(Byte *string, Byte *template, long *param);

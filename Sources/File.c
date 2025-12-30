@@ -35,6 +35,7 @@
 #include "MacBinary.h"
 #include "FormatStr.h"
 #include "Interp.h"
+#include "StrUtil.h"
 
 /* ----- Static data --------------------------------------------------- */
 
