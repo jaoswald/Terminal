@@ -1,3 +1,4 @@
+#include "Dialogs.r"
 #include "Menus.r"
 #include "Types.r"
 
@@ -223,3 +224,802 @@ resource 'MBAR' (128) {
 	133
 	}
 };
+
+resource 'DLOG' (128) {
+  {40, 40, 240, 280},
+  documentProc,
+  invisible,
+  noGoAway,
+  0,  /* refCon */
+  136, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DLOG' (129, purgeable) {
+  {42, 14, 210, 258},
+  dBoxProc,
+  visible,
+  noGoAway,
+  0, /* refCon */
+  129, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DLOG' (130, purgeable) {
+  {36, 15, 256, 280},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  130, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DLOG' (131, purgeable) {
+  {51, 7, 171, 448},
+  noGrowDocProc,
+  visible,
+  noGoAway,
+  0, /* refCon */
+  131, /* DITL Id */
+  "File transfer",
+  noAutoCenter
+};
+
+resource 'DLOG' (136, purgeable) {
+  {40, 40, 309, 310},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  136, /* DITL Id */
+  "New Dialog",
+  noAutoCenter
+};
+
+resource 'DLOG' (137, purgeable) {
+  {40, 40, 216, 439},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  137, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DITL' (131, purgeable) {
+	{
+	{6, 375, 22, 435},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{6, 6, 22, 166},
+	StaticText {
+		disabled,
+		""
+	},
+	{6, 164, 22, 370},
+	StaticText {
+		disabled,
+		""
+	},
+	{28, 6, 44, 336},
+	StaticText {
+		disabled,
+		""
+	},
+	{65, 374, 81, 434},
+	StaticText {
+		disabled,
+		""
+	},
+	{28, 374, 44, 434},
+	StaticText {
+		disabled,
+		""
+	},
+	{43, 374, 59, 434},
+	StaticText {
+		disabled,
+		""
+	},
+	{58, 16, 74, 257},
+	UserItem {
+		disabled
+	},
+	{97, 48, 113, 108},
+	StaticText {
+		disabled,
+		""
+	},
+	{97, 106, 113, 328},
+	StaticText {
+		disabled,
+		""
+	},
+	{97, 374, 113, 434},
+	StaticText {
+		disabled,
+		""
+	},
+	{74, 14, 90, 267},
+	Picture {
+		disabled,
+		128
+	},
+	{43, 334, 59, 375},
+	StaticText {
+		disabled,
+		"Total:"
+	},
+	{65, 309, 81, 375},
+	StaticText {
+		disabled,
+		"Time left:"
+	},
+	{97, 6, 113, 50},
+	StaticText {
+		disabled,
+		"Block:"
+	},
+	{97, 327, 113, 375},
+	StaticText {
+		disabled,
+		"Errors:"
+	},
+	{28, 334, 44, 375},
+	StaticText {
+		disabled,
+		"Done:"
+	}
+}
+};
+
+resource 'DITL' (133, purgeable) {
+	{
+	{147, 148, 167, 208},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{147, 52, 167, 112},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{35, 21, 51, 81},
+	CheckBox {
+		enabled,
+		"CRC"
+	},
+	{75, 21, 91, 81},
+	RadioButton {
+		enabled,
+		"off"
+	},
+	{90, 21, 106, 81},
+	RadioButton {
+		enabled,
+		"auto"
+	},
+	{105, 21, 121, 81},
+	RadioButton {
+		enabled,
+		"CK"
+	},
+	{75, 98, 91, 158},
+	RadioButton {
+		enabled,
+		"off"
+	},
+	{90, 98, 106, 158},
+	RadioButton {
+		enabled,
+		"Y"
+	},
+	{105, 98, 121, 158},
+	RadioButton {
+		enabled,
+		"RR"
+	},
+	{60, 174, 76, 234},
+	RadioButton {
+		enabled,
+		"Ê5"
+	},
+	{75, 174, 91, 234},
+	RadioButton {
+		enabled,
+		"10"
+	},
+	{90, 174, 106, 234},
+	RadioButton {
+		enabled,
+		"15"
+	},
+	{105, 174, 121, 234},
+	RadioButton {
+		enabled,
+		"20"
+	},
+	{20, 6, 22, 247},
+	UserItem {
+		disabled
+	},
+	{61, 41, 76, 62},
+	StaticText {
+		disabled,
+		"1K"
+	},
+	{69, 16, 126, 86},
+	UserItem {
+		disabled
+	},
+	{60, 107, 76, 148},
+	StaticText {
+		disabled,
+		"Batch"
+	},
+	{69, 93, 126, 163},
+	UserItem {
+		disabled
+	},
+	{46, 177, 61, 231},
+	StaticText {
+		disabled,
+		"Timeout"
+	},
+	{54, 169, 126, 239},
+	UserItem {
+		disabled
+	},
+	{2, 68, 19, 205},
+	StaticText {
+		disabled,
+		"X/Y-Modem options"
+	}
+	}
+};
+
+resource 'DITL' (134, purgeable) {
+	{
+	{121, 288, 141, 348},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{121, 214, 141, 274},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{39, 223, 55, 346},
+	EditText {
+		enabled,
+		""
+	},
+	{64, 296, 80, 346},
+	EditText {
+		enabled,
+		""
+	},
+	{89, 296, 105, 346},
+	EditText {
+		enabled,
+		""
+	},
+	{26, 7, 28, 353},
+	UserItem {
+		disabled
+	},
+	{39, 6, 55, 218},
+	StaticText {
+		disabled,
+		"Wait after each line sent for:"
+	},
+	{64, 6, 80, 291},
+	StaticText {
+		disabled,
+		"Delay after each line sent (ticks):"
+	},
+	{89, 6, 105, 291},
+	StaticText {
+		disabled,
+		"Delay after each character sent (ticks):"
+	},
+	{7, 105, 24, 254},
+	StaticText {
+		disabled,
+		"TEXT file send options"
+	}
+	}
+};
+
+resource 'DITL' (135, purgeable) {
+	{
+	{239, 152, 259, 212},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{239, 52, 259, 112},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{33, 194, 49, 248},
+	EditText {
+		enabled,
+		""
+	},
+	{58, 194, 74, 248},
+	EditText {
+		enabled,
+		""
+	},
+	{83, 194, 99, 248},
+	EditText {
+		enabled,
+		""
+	},
+	{108, 194, 124, 226},
+	EditText {
+		enabled,
+		""
+	},
+	{133, 194, 149, 226},
+	EditText {
+		enabled,
+		""
+	},
+	{160, 7, 176, 149},
+	CheckBox {
+		enabled,
+		"Òcontrol-GÓ beeps"
+	},
+	{205, 17, 221, 89},
+	RadioButton {
+		enabled,
+		"control"
+	},
+	{205, 88, 221, 153},
+	RadioButton {
+		enabled,
+		"option"
+	},
+	{205, 152, 221, 237},
+	RadioButton {
+		enabled,
+		"command"
+	},
+	{188, 83, 205, 162},
+	StaticText {
+		disabled,
+		"Control key"
+	},
+	{196, 11, 228, 243},
+	UserItem {
+		disabled
+	},
+	{20, 7, 22, 254},
+	UserItem {
+		disabled
+	},
+	{3, 81, 19, 175},
+	StaticText {
+		disabled,
+		"Other options"
+	},
+	{33, 8, 49, 190},
+	StaticText {
+		disabled,
+		"Capture TEXT file creator:"
+	},
+	{58, 8, 74, 190},
+	StaticText {
+		disabled,
+		"Non-Macbinary file - type:"
+	},
+	{84, 120, 100, 190},
+	StaticText {
+		disabled,
+		"- creator:"
+	},
+	{108, 8, 124, 190},
+	StaticText {
+		disabled,
+		"Code for ÒBackspaceÓ key:"
+	},
+	{133, 8, 149, 190},
+	StaticText {
+		disabled,
+		"Code for Ò ` Ó key:"
+	}
+	}
+};
+
+resource 'DITL' (129, purgeable) {
+	{
+	{136, 212, 168, 244},
+	Icon {
+		enabled,
+		129
+	},
+	{45, 0, 124, 245},
+	StaticText {
+		disabled,
+		""
+	},
+	{0, 0, 32, 32},
+	UserItem {
+		disabled
+	},
+	{149, 124, 165, 190},
+	StaticText {
+		disabled,
+		""
+	},
+	{0, 43, 32, 245},
+	StaticText {
+		disabled,
+		""
+	},
+	{38, 0, 40, 245},
+	UserItem {
+		disabled
+	},
+	{129, 0, 131, 245},
+	UserItem {
+		disabled
+	},
+	{149, 2, 165, 125},
+	StaticText {
+		disabled,
+		"Heap free (bytes):"
+	}
+	}
+};
+
+resource 'DITL' (130, purgeable) {
+	{
+	{189, 139, 209, 199},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{189, 63, 209, 123},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{48, 99, 64, 252},
+	CheckBox {
+		enabled,
+		"Display and capture"
+	},
+	{63, 99, 79, 173},
+	CheckBox {
+		enabled,
+		"Auto LF"
+	},
+	{48, 9, 64, 79},
+	CheckBox {
+		enabled,
+		"Local"
+	},
+	{63, 9, 79, 79},
+	CheckBox {
+		enabled,
+		"Remote"
+	},
+	{33, 27, 49, 62},
+	StaticText {
+		disabled,
+		"Echo"
+	},
+	{41, 4, 87, 85},
+	UserItem {
+		disabled
+	},
+	{150, 9, 166, 73},
+	CheckBox {
+		enabled,
+		"Enable"
+	},
+	{151, 197, 167, 253},
+	Button {
+		enabled,
+		"Select"
+	},
+	{129, 10, 145, 253},
+	StaticText {
+		disabled,
+		""
+	},
+	{108, 81, 125, 176},
+	StaticText {
+		disabled,
+		"Startup script"
+	},
+	{117, 5, 173, 258},
+	UserItem {
+		disabled
+	},
+	{6, 66, 24, 180},
+	StaticText {
+		disabled,
+		"Terminal options"
+	},
+	{23, 5, 25, 258},
+	UserItem {
+		disabled
+	}
+	}
+};
+
+resource 'DITL' (128, purgeable) {
+	{
+	{44, 223, 64, 283},
+	Button {
+		enabled,
+		"Ok@"
+	},
+	{5, 45, 37, 283},
+	StaticText {
+		disabled,
+		"^0"
+	},
+	{5, 6, 37, 38},
+	Icon {
+		disabled,
+		129
+	}
+}
+};
+
+resource 'DITL' (132, purgeable) {
+	{
+	{196, 230, 216, 290},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{165, 230, 185, 290},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{40, 90, 56, 290},
+	UserItem {
+		enabled
+	},
+	{65, 90, 81, 290},
+	UserItem {
+		enabled
+	},
+	{90, 90, 106, 290},
+	UserItem {
+		enabled
+	},
+	{115, 90, 131, 290},
+	UserItem {
+		enabled
+	},
+	{140, 90, 156, 290},
+	UserItem {
+		enabled
+	},
+	{165, 90, 181, 220},
+	UserItem {
+		enabled
+	},
+	{196, 5, 216, 215},
+	CheckBox {
+		enabled,
+		"Don't drop DTR when quitting"
+	},
+	{18, 3, 20, 298},
+	UserItem {
+		disabled
+	},
+	{0, 66, 17, 224},
+	StaticText {
+		disabled,
+		"Communication options"
+	}
+	}
+};
+
+resource 'DITL' (136, purgeable) {
+	{
+	{243, 157, 263, 217},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{243, 64, 263, 124},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{38, 2, 54, 216},
+	CheckBox {
+		enabled,
+		"Escape all control characters"
+	},
+	{60, 199, 76, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{81, 199, 97, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{122, 199, 138, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{167, 199, 183, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{188, 199, 204, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{209, 199, 225, 254},
+	EditText {
+		enabled,
+		""
+	},
+	{28, 2, 30, 270},
+	UserItem {
+		disabled
+	},
+	{104, 110, 119, 165},
+	StaticText {
+		disabled,
+		"Receive"
+	},
+	{113, 7, 147, 264},
+	UserItem {
+		disabled
+	},
+	{148, 107, 164, 169},
+	StaticText {
+		disabled,
+		"Transmit"
+	},
+	{155, 7, 235, 264},
+	UserItem {
+		disabled
+	},
+	{7, 85, 23, 210},
+	StaticText {
+		disabled,
+		"Z-Modem options"
+	},
+	{60, 13, 76, 193},
+	StaticText {
+		disabled,
+		"Timeout (seconds):"
+	},
+	{81, 13, 97, 193},
+	StaticText {
+		disabled,
+		"Maximal retries:"
+	},
+	{122, 14, 138, 194},
+	StaticText {
+		disabled,
+		"Buffer size (bytes):"
+	},
+	{167, 14, 183, 194},
+	StaticText {
+		disabled,
+		"Sub-packet length (Bytes):"
+	},
+	{188, 14, 204, 194},
+	StaticText {
+		disabled,
+		"Window limit (Bytes):"
+	},
+	{209, 14, 225, 194},
+	StaticText {
+		disabled,
+		"ZCRCQ spacing (Bytes):"
+	}
+}
+};
+
+resource 'DITL' (137, purgeable) {
+	{
+	{106, 321, 126, 381},
+	Button {
+		enabled,
+		"OK@"
+	},
+	{73, 320, 93, 380},
+	Button {
+		enabled,
+		"Cancel"
+	},
+	{31, 4, 47, 389},
+	CheckBox {
+		enabled,
+		"Recognize and use MacBinary format for n"
+		"on-TEXT files"
+	},
+	{72, 16, 87, 175},
+	CheckBox {
+		enabled,
+		"CompuServe Quick-B"
+	},
+	{86, 16, 102, 116},
+	RadioButton {
+		enabled,
+		"X/Y-Modem"
+	},
+	{101, 16, 117, 116},
+	RadioButton {
+		enabled,
+		"Z-Modem"
+	},
+	{101, 115, 117, 220},
+	CheckBox {
+		enabled,
+		"Auto receive"
+	},
+	{133, 98, 150, 297},
+	Button {
+		enabled,
+		"Path for up- and downloads:"
+	},
+	{153, 7, 169, 392},
+	StaticText {
+		disabled,
+		""
+	},
+	{20, 6, 22, 390},
+	UserItem {
+		disabled
+	},
+	{55, 75, 71, 135},
+	StaticText {
+		disabled,
+		"Protocol"
+	},
+	{63, 9, 123, 227},
+	UserItem {
+		disabled
+	},
+	{2, 111, 18, 293},
+	StaticText {
+		disabled,
+		"Binary file transfer options"
+	}
+}
+};
+
+resource 'ALRT' (128, purgeable) {
+  {40, 93, 112, 384},
+  128, /* DITL Id */
+  {
+    OK, visible, sound1,
+    OK, visible, sound1,
+    OK, visible, sound1,
+    OK, visible, sound1,
+  },
+  noAutoCenter
+};
+
