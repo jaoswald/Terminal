@@ -47,6 +47,7 @@ target_sources(Terminal PRIVATE
 			../Sources/OtherOptions.c
 			../Sources/Popup.c
 			../Sources/Port.c
+			../Sources/PortOptions.c
 			../Sources/Procedure.c
 			../Sources/ProtocolOptions.c
 			../Sources/Script.c
