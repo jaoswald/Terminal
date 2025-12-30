@@ -9,7 +9,7 @@ typedef long INTEGER;		/* Pointers and integers are mixed */
 
 /* ----- Intrinsic function table (provided by shell) ------------------ */
 
-typedef INTEGER (*IFUNC)(...);
+typedef INTEGER (*IFUNC)();
 
 typedef struct {
 	Byte *fname;

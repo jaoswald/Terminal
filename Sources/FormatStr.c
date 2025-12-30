@@ -38,8 +38,9 @@
 #include <NumberFormatting.h>
 
 #include "StrUtil.h"
-Byte *FormatStr(Byte *string, Byte *template);
 #include "Util.h"
+
+Byte *FormatStr(Byte *string, Byte *template, ...);
 Byte *SFormatStr(Byte *string, Byte *template, long *param);
 
 static void MoveBytes(
@@ -66,7 +67,7 @@ static void MoveBlanks(
 
 Byte *FormatStr(
 	Byte *result,			/* Result string */
-	Byte *template)			/* Template string */
+	Byte *template, ...)		/* Template string */
 {
 	va_list ap;
 	Byte *p = result + 1;
@@ -156,7 +157,7 @@ Byte *FormatStr(
 		} else						/* Copy character */
 			*p++ = *template;
 	}
-	va_end(pa);
+	va_end(ap);
 	*result = p - result - 1;
 	return result;
 }

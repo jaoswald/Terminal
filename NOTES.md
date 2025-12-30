@@ -34,3 +34,19 @@ used by this repostiory).
 
 My plan is to update the dialog and alert handling code to do the manual work
 of `default` control styling and handling, and drop the extra CDEF.
+
+# 2025-12-30
+
+## FormatStr/variable argument list
+
+ThinkC 2-byte shorts causes serious-sounding warnings with FormatStr()/stdargs.h
+usage in FormatStr.c
+
+  In file included from .../Sources/FormatStr.c:35:
+  .../Sources/FormatStr.c: In function ‘FormatStr’:
+  .../Sources/FormatStr.c:140:64: warning: ‘short int’ is promoted to ‘int’
+     when passed through ‘...’
+          NumToString(va_arg(ap, short), num);
+  note: (so you should pass ‘int’ not ‘short int’ to ‘va_arg’)
+  note: if this code is reached, the program will abort
+
