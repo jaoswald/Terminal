@@ -103,7 +103,7 @@ void SerialDevice(SDPROC callback)
 		for (old = 0, index = 1; ; old = p->crmDeviceID, ++index) {
 			r.crmDeviceType = crmSerialDevice;
 			r.crmDeviceID = old;
-			if (!(p = (CRMRec *)CRMSearch((QElemPtr)(p = &r))))
+			if (!(p = (CRMRec *)CRMSearch((CRMRecPtr)(p = &r))))
 				break;
 			ser = (CRMSerialRecord *)p->crmAttributes;
 			if ((* callback)(index, *(ser->name), *(ser->inputDriverName),
@@ -156,7 +156,7 @@ static short OpenSerialDriver(
 	OpenErr = 1;			/* If no port with this name is found */
 	DTR = FALSE;			/* DTR negated until port is open */
 	PORTNO = 0;
-	SerialDevice((ProcPtr)OpenSerial);
+	SerialDevice((SDPROC)OpenSerial);
 	return OpenErr;
 }
 
@@ -494,7 +494,7 @@ void SerialSend(
 	}
 	*busy = TRUE;
 	param.busy = busy;
-	param.b.ioCompletion = (ProcPtr)SendComplete;
+	param.b.ioCompletion = (IOCompletionUPP)SendComplete;
 	param.b.ioRefNum = OUTPUT;
 	param.b.ioBuffer = (Ptr)buffer;
 	param.b.ioReqCount = count;
