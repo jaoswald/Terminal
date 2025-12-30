@@ -1,4 +1,5 @@
 #include "Dialogs.r"
+#include "MacTypes.r"
 #include "Menus.r"
 #include "Types.r"
 
@@ -22,6 +23,7 @@ resource 'SIZE' (-1) {
 	163840,
 	163840
 };
+
 resource 'MENU' (128) {
 	128,
 	textMenuProc,
@@ -1023,3 +1025,21 @@ resource 'ALRT' (128, purgeable) {
   noAutoCenter
 };
 
+
+resource 'vers' (1, purgeable) {
+ $02, $20, /* version 2.2.0 */
+ final,    /* release stage */
+ 0,        /* non-final release # */
+ verUS,    /* region code USA */
+ "2.2",    /* short version string */
+ "2.2 (17-Jan-1992)\rErny Tontlinger" /* long version string */
+};
+
+resource 'vers' (2, purgeable) {
+  $02, $20, /* version 2.2.0 */
+  final,    /* release stage */
+  0,        /* non-final release # */
+  verUS,    /* region code USA */
+  "2.2",    /* short version string */
+  "Serial communication program", /* long version string */
+};
