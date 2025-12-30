@@ -37,6 +37,18 @@ of `default` control styling and handling, and drop the extra CDEF.
 
 # 2025-12-30
 
+## Headers
+
+The ThinkC and MPW approach to headers was to use precompilation: the whole bag
+of headers was included in MacHeaders{MPW}.c, and then `#include "MacHeaders"`
+or `#pragma load ":(Objects):MacHeadersMPW"` was used.
+
+For now, I am going to follow the principle of Include-What-You-Use and add
+explicit includes for the headers needed by each file. That will likely slow
+down Think C and MPW performance, but I'm not actually concerned about that.
+
+Maybe I should use the opposite conditionals to skip my 'Retro68' includes?
+
 ## FormatStr/variable argument list
 
 ThinkC 2-byte shorts causes serious-sounding warnings with FormatStr()/stdargs.h
@@ -50,3 +62,8 @@ usage in FormatStr.c
   note: (so you should pass ‘int’ not ‘short int’ to ‘va_arg’)
   note: if this code is reached, the program will abort
 
+## Other int-size issues
+
+I'm not sure how worried I should be about integer size issues and Retro68.
+The code accomodates some Think C/MPW differences, maybe I should extend that
+to Retro68?
