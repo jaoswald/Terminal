@@ -377,7 +377,7 @@ void SendScrap(void)
 				TypeText((Byte *)*h, err);
 				err = noErr;
 			}
-			DisposHandle(h);
+			DisposeHandle(h);
 		} else
 			err = memFullErr;
 		if (err)
@@ -634,7 +634,7 @@ static Boolean Script(void)
 
 done:
 	if (ScriptBuffer)
-		DisposPtr((Ptr)ScriptBuffer);
+		DisposePtr((Ptr)ScriptBuffer);
 	if (ScriptRef)
 		FSClose(ScriptRef);
 	if (err) {

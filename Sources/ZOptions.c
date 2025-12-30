@@ -106,7 +106,7 @@ void ZOptions(void)
 						window,
 						zcrcq);
 			case B_CANCEL:
-				DisposDialog(dialog);
+				DisposeDialog(dialog);
 				return;
 			case C_ESCCTL:
 				ToggleCheckBox(dialog, number);

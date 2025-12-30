@@ -70,7 +70,7 @@ static void ReadConfig(void)
 		GetFNum((**h).fontname, &Config.font);
 		ReleaseResource((Handle)h);
 	} else {
-		Config.font = monaco;
+		Config.font = kFontIDMonaco;
 		Config.size = 9;
 		Config.lines = 24;
 		Config.columns = 81;
@@ -382,7 +382,7 @@ static void ScriptsInit(void)
 					if there are any of the menu meta characters ( ';' '^'
 					'!' '<' '/' '(' ) in the name. */
 					AppendMenu(mh, "\p ");
-					SetItem(mh, ++menuitem, name);
+					SetMenuItemText(mh, ++menuitem, name);
 					break;
 				}
 				if (p == name || *q != *p)	/* Don't show file */
@@ -407,7 +407,7 @@ static DocumentPeek NewDocument(void)
 		if (!NewWindow((void *)window, &r,
 				MyString(STR_G, G_TERMINAL),
 				FALSE, noGrowDocProc, (WindowPtr)-1L, TRUE, 0)) {
-			DisposPtr((Ptr)window);
+			DisposePtr((Ptr)window);
 			return 0;
 		}
 		SetPort((GrafPtr)window);
@@ -531,7 +531,7 @@ Boolean Init(void)
 	WNE = TrapAvailable(TN_WaitNextEvent, ToolTrap);
 	KCHR = (TrapAvailable(TN_ScriptUtil, ToolTrap) &&
 			TrapAvailable(TN_KeyTrans, ToolTrap)) ?
-		GetResource('KCHR', GetScript(smRoman, smScriptKeys)) : 0;
+		GetResource('KCHR', GetScriptVariable(smRoman, smScriptKeys)) : 0;
 	MFmemory = TrapAvailable(TN_OSDispatch, ToolTrap);
 #ifdef USECTB
 	if (CTB = TrapAvailable(TN_CommToolbox, OSTrap))
@@ -544,9 +544,9 @@ Boolean Init(void)
 	if (!(h = GetNewMBar(MENUBAR)))
 		return TRUE;
 	SetMenuBar(h);
-	DisposHandle(h);
-	if (h = (Handle)GetMHandle(APPLE))
-		AddResMenu((MenuHandle)h, 'DRVR');
+	DisposeHandle(h);
+	if (h = (Handle)GetMenuHandle(APPLE))
+		AppendResMenu((MenuHandle)h, 'DRVR');
 	ScriptsInit();
 	DrawMenuBar();
 	TerminalWindow = NewDocument();

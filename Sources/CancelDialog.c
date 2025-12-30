@@ -80,7 +80,7 @@ void RemoveCancelDialog(void)
 			Settings.progressWindow = position;
 			Settings.dirty = TRUE;
 		}
-		DisposDialog(Dialog);
+		DisposeDialog(Dialog);
 		Dialog = 0;
 		RedrawDocument();
 		DisableItem(GetMenu(EDIT), SHOWPW);
@@ -171,9 +171,9 @@ void DrawProgressDialog(
 	if (Dialog = GetNewDialog(DLOG_PROGRESS, 0L, (WindowPtr)-1L)) {
 		SetEText(Dialog, PROGRESS_ACTION, MyString(STR_P, prompt));
 		SetEText(Dialog, PROGRESS_NAME, name);
-		GetDItem(Dialog, PROGRESS_USER, &type, &item, &Box);
-		SetDItem(Dialog, PROGRESS_USER, userItem, (Handle)DrawProgress,
-			&Box);
+		GetDialogItem(Dialog, PROGRESS_USER, &type, &item, &Box);
+		SetDialogItem(Dialog, PROGRESS_USER, userItem,
+			      (Handle)DrawProgress, &Box);
 		SetEText(Dialog, PROGRESS_INFO, EmptyStr);
 		DrawDialog(Dialog);
 		EnableItem(GetMenu(EDIT), SHOWPW);

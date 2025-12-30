@@ -242,7 +242,7 @@ short BinOpenRead(
 	}
 	HUnlock((Handle)f);
 	if (err)
-		DisposHandle((Handle)f);
+		DisposeHandle((Handle)f);
 	else
 		File = f;		/* Now is open */
 	return err;
@@ -374,7 +374,7 @@ short BinCloseRead(void)
 		return 1;				/* Is not open! */
 	if (ref = (**File).ref)
 		FSClose(ref);			/* Data or resource fork */
-	DisposHandle((Handle)File);
+	DisposeHandle((Handle)File);
 	File = 0;					/* Now file is closed */
 	return 0;
 }
@@ -544,7 +544,7 @@ short BinCloseWrite(void)
 		FSClose(p->ref);		/* Data or resource fork */
 	FlushVol(0, p->volume);
 	HUnlock((Handle)f);
-	DisposHandle((Handle)f);
+	DisposeHandle((Handle)f);
 	File = 0;					/* Now file is closed */
 	return err;
 }

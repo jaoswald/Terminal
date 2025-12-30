@@ -112,7 +112,7 @@ static void Terminate(void)
 		FSClose(SendFileRef);
 	if (TerminalWindow->file)	/* Close capture file if necessary */
 		TextCapture(0);
-	DisposPtr((Ptr)TerminalWindow->buf.text);
+	DisposePtr((Ptr)TerminalWindow->buf.text);
 	position = topLeft(((GrafPtr)TerminalWindow)->portRect);
 	SetPort((GrafPtr)TerminalWindow);
 	LocalToGlobal(&position);
@@ -123,7 +123,7 @@ static void Terminate(void)
 	}
 	DisposeWindow((WindowPtr)TerminalWindow);
 	if (MacrosText)
-		DisposHandle(MacrosText);
+		DisposeHandle(MacrosText);
 
 	/* Save options if necessary */
 
@@ -161,7 +161,7 @@ static void AdjustMenus(void)
 	register Boolean empty =
 		TerminalWindow->buf.newChar == TerminalWindow->buf.firstChar;
 
-	menu = GetMHandle(FILE);
+	menu = GetMenuHandle(FILE);
 	if (Transfer) {
 		DisableItem(menu, SCREEN);
 		DisableItem(menu, CAPTURE);
@@ -198,7 +198,7 @@ static void AdjustMenus(void)
 		EnableItem(menu, QUIT);
 	}
 
-	menu = GetMHandle(EDIT);
+	menu = GetMenuHandle(EDIT);
 	if (Transfer) {
 		DisableItem(menu, RESET);
 		EnableItem(menu, SHOWPW);
@@ -236,19 +236,19 @@ static void AdjustMenus(void)
 		DisableItem(menu, CLEAR);
 	}
 
-	menu = GetMHandle(OPTIONS);
+	menu = GetMenuHandle(OPTIONS);
 	if (Transfer)
 		DisableItem(menu, 0);
 	else
 		EnableItem(menu, 0);
 
-	menu = GetMHandle(SCRIPT);
+	menu = GetMenuHandle(SCRIPT);
 	if (Transfer)
 		DisableItem(menu, 0);
 	else
 		EnableItem(menu, 0);
 
-	menu = GetMHandle(MACRO);
+	menu = GetMenuHandle(MACRO);
 	if (Transfer)
 		DisableItem(menu, 0);
 	else
@@ -273,7 +273,7 @@ static void DoMenuCommand(
 					UnloadSeg(About);
 					break;
 				default:
-					GetItem(GetMHandle(APPLE), menuItem, (Byte *)&daName);
+					GetMenuItemText(GetMenuHandle(APPLE), menuItem, (Byte *)&daName);
 					OpenDeskAcc((Byte *)&daName);
 					break;
 			}
@@ -482,7 +482,7 @@ void DoEvent(register EventRecord *event)
 					state = 0;
 					LoadResource(KCHR);
 					if (*KCHR)
-						key = KeyTrans(*KCHR, code, &state) & 0x1F;
+						key = KeyTranslate(*KCHR, code, &state) & 0x1F;
 				} else
 					/* Use option key as control key, if this option is set */
 					if (Settings.ctrl == 2 && (event->modifiers & cmdKey))

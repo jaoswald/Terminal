@@ -84,7 +84,7 @@ void OtherOptions(void)
 	SetEText(dialog, E_BACKSPACE, str);
 	NumToString(Settings.escape & 0x7F, str);
 	SetEText(dialog, E_ESCAPE, str);
-	SelIText(dialog, E_TEXT_CR, 0, 32767);
+	SelectDialogItemText(dialog, E_TEXT_CR, 0, 32767);
 	SetCheck(dialog, C_BEEP, Settings.beep);
 	SetRadioButton(dialog, R_CONTROL, R_COMMAND, R_CONTROL+Settings.ctrl);
 	ShowWindow(dialog);
@@ -114,7 +114,7 @@ void OtherOptions(void)
 				StringToNum(str, &num);
 				if (num < 0 || num > 128) {
 					SysBeep(1);
-					SelIText(dialog, E_BACKSPACE, 0, 32767);
+					SelectDialogItemText(dialog, E_BACKSPACE, 0, 32767);
 					break;
 				}
 				if (num != Settings.backspace) {
@@ -125,7 +125,7 @@ void OtherOptions(void)
 				StringToNum(str, &num);
 				if (num < 0 || num > 128) {
 					SysBeep(1);
-					SelIText(dialog, E_ESCAPE, 0, 32767);
+					SelectDialogItemText(dialog, E_ESCAPE, 0, 32767);
 					break;
 				}
 				if (num != Settings.escape) {
@@ -143,7 +143,7 @@ void OtherOptions(void)
 				}
 				/* fall thru */
 			case B_CANCEL:
-				DisposDialog(dialog);
+				DisposeDialog(dialog);
 				return;
 			case C_BEEP:
 				ToggleCheckBox(dialog, number);

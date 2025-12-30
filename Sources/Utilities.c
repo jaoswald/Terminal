@@ -81,7 +81,7 @@ register short mode;
 
 	SetPort(dialog);
 	GetPenState(&state);
-	GetDItem(dialog, item, &kind, &h, &r);
+	GetDialogItem(dialog, item, &kind, &h, &r);
 	PenMode(mode);
 	PenPat(QD(black));
 	PenSize(3, 3);
@@ -102,8 +102,8 @@ void GetEText(
 	Handle theItem;
 	Rect theBox;
 
-	GetDItem(dPtr, item, &theType, &theItem, &theBox);
-	GetIText(theItem, str);
+	GetDialogItem(dPtr, item, &theType, &theItem, &theBox);
+	GetDialogItemText(theItem, str);
 }
 
 /* ----- Set edit text field in a dialog ------------------------------- */
@@ -117,8 +117,8 @@ void SetEText(
 	Handle theItem;
 	Rect theBox;
 
-	GetDItem(dPtr, item, &theType, &theItem, &theBox);
-	SetIText(theItem, str);
+	GetDialogItem(dPtr, item, &theType, &theItem, &theBox);
+	SetDialogItemText(theItem, str);
 }
 
 /* ----- Get the value of a control ------------------------------------ */
@@ -131,8 +131,8 @@ short GetCheck(
 	Handle theItem;
 	Rect theBox;
 
-	GetDItem(dPtr, ChkItem, &theType, &theItem, &theBox);
-	return GetCtlValue((ControlHandle)theItem);
+	GetDialogItem(dPtr, ChkItem, &theType, &theItem, &theBox);
+	return GetControlValue((ControlHandle)theItem);
 }
 
 /* ----- Set the value of a control ------------------------------------ */
@@ -146,8 +146,8 @@ void SetCheck(
 	Handle theItem;
 	Rect theBox;
 
-	GetDItem(dPtr, ChkItem, &theType, &theItem, &theBox);
-	SetCtlValue((ControlHandle)theItem, value);
+	GetDialogItem(dPtr, ChkItem, &theType, &theItem, &theBox);
+	SetControlValue((ControlHandle)theItem, value);
 }
 
 /* ----- Hilite control ----------------------------------------------- */
@@ -161,7 +161,7 @@ void SetHilite(
 	Handle theItem;
 	Rect theBox;
 
-	GetDItem(dPtr, ChkItem, &theType, &theItem, &theBox);
+	GetDialogItem(dPtr, ChkItem, &theType, &theItem, &theBox);
 	HiliteControl((ControlHandle)theItem, Value);
 }
 
@@ -218,9 +218,9 @@ void ToggleCheckBox(
 	Handle itemHdl;
 	Rect box;
 
-	GetDItem(dialog, item, &type, &itemHdl, &box);
-	SetCtlValue((ControlHandle)itemHdl,
-		(GetCtlValue((ControlHandle)itemHdl) == 0) ? 1 : 0);
+	GetDialogItem(dialog, item, &type, &itemHdl, &box);
+	SetControlValue((ControlHandle)itemHdl,
+		(GetControlValue((ControlHandle)itemHdl) == 0) ? 1 : 0);
 }
 
 /* ----- Set group of radio buttons ------------------------------------ */
@@ -239,8 +239,8 @@ Boolean SetRadioButton(
 	if (item < item1 || item > item2)
 		return FALSE;
 	for (i = item1; i <= item2; i++) {
-		GetDItem(dialog, i, &type, &itemHdl, &box);
-		SetCtlValue((ControlHandle)itemHdl, (item == i) ? 1 : 0);
+		GetDialogItem(dialog, i, &type, &itemHdl, &box);
+		SetControlValue((ControlHandle)itemHdl, (item == i) ? 1 : 0);
 	}
 	return TRUE;
 }
@@ -258,8 +258,8 @@ short GetRadioButton(
 	Rect box;
 
 	for (i = item1; i <= item2; i++) {
-		GetDItem(dialog, i, &type, &itemHdl, &box);
-		if (GetCtlValue((ControlHandle)itemHdl))
+		GetDialogItem(dialog, i, &type, &itemHdl, &box);
+		if (GetControlValue((ControlHandle)itemHdl))
 			return i;
 	}
 	return 0;
@@ -324,9 +324,9 @@ pascal void DrawUserFrame(
 	Handle item;
 	Rect box, boxT;
 
-	GetDItem(window, number - 1, &type, &item, &boxT);	/* Text */
-	GetDItem(window, number, &type, &item, &box);		/* User item */
 	PenPat(QD(gray));
+	GetDialogItem(window, number - 1, &type, &item, &boxT);	/* Text */
+	GetDialogItem(window, number, &type, &item, &box);		/* User item */
 	MoveTo(boxT.right + 2, box.top);
 	LineTo(box.right, box.top);
 	LineTo(box.right, box.bottom);
@@ -590,8 +590,8 @@ void SetUserItem(
 	Handle h;
 	Rect box;
 
-	GetDItem(dialog, item, &type, &h, &box);
-	SetDItem(dialog, item, userItem, (Handle)function, &box);
+	GetDialogItem(dialog, item, &type, &h, &box);
+	SetDialogItem(dialog, item, userItem, (Handle)function, &box);
 }
 
 /* ----- Activate/deactivate controls in dialog ------------------------ */
@@ -605,7 +605,7 @@ void ActivateDeactivate(
 	Handle h;
 	Rect box;
 
-	GetDItem(dialog, item, &type, &h, &box);
+	GetDialogItem(dialog, item, &type, &h, &box);
 	HiliteControl((ControlHandle)h, activate ? 0 : 255);
 }
 
@@ -626,7 +626,7 @@ unsigned long MaxBuffer(register Boolean *mf)
 	else
 		max1 -= RESERVE1;
 	if (MFmemory) {
-		max2 = MFMaxMem(&grow);
+		max2 = TempMaxMem(&grow);
 		if (max2 < RESERVE2)
 			max2 = 0;
 		else
@@ -647,8 +647,8 @@ Handle NewBuffer(register unsigned long size, register Boolean mf)
 	short err;
 
 	if (MFmemory && mf) {
-		if (h = MFTempNewHandle(size, &err))
-			MFTempHLock(h, &err);
+		if (h = TempNewHandle(size, &err))
+			TempHLock(h, &err);
 	} else {
 		if (h = NewHandle(size))
 			HLock(h);
@@ -664,9 +664,9 @@ void DisposeBuffer(register Handle h, register Boolean mf)
 
 	if (h) {
 		if (mf)
-			MFTempDisposHandle(h, &err);
+			TempDisposeHandle(h, &err);
 		else
-			DisposHandle(h);
+			DisposeHandle(h);
 	}
 }
 
@@ -700,7 +700,7 @@ Boolean DialogKeydown(
 	long ignore;
 
 	if (key == 0x03 || key == 0x0D)	{	/* Enter, return */
-		GetDItem(dialog, 1, &type, &hdl, &box);
+		GetDialogItem(dialog, 1, &type, &hdl, &box);
 		HiliteControl((ControlHandle)hdl, 1);
 		Delay(3, &ignore);
 		HiliteControl((ControlHandle)hdl, 0);

@@ -132,5 +132,5 @@ void TerminalOptions(void)
 				break;
 		}
 	} while (number != B_OK && number != B_CANCEL);
-	DisposDialog(dialog);
+	DisposeDialog(dialog);
 }

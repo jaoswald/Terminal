@@ -87,8 +87,8 @@ static pascal short MyHook(
 
 	if (itemno == -1 && DialogOpenSave) {
 		/* Set text of Open/Save button */
-		GetDItem(dialog, getOpen, &type, &item, &box);
-		SetCTitle((ControlHandle)item, DialogOpenSave);
+		GetDialogItem(dialog, getOpen, &type, &item, &box);
+		SetControlTitle((ControlHandle)item, DialogOpenSave);
 	}
 	return itemno;
 }
@@ -160,11 +160,11 @@ static pascal short DirectoryHook(
 
 	if (itemno == -1) {
 		/* Set text of "Open" button */
-		GetDItem(dialog, getOpen, &type, &item, &box);
-		SetCTitle((ControlHandle)item, MyString(STR_G, G_SELECT));
+		GetDialogItem(dialog, getOpen, &type, &item, &box);
+		SetControlTitle((ControlHandle)item, MyString(STR_G, G_SELECT));
 	} else if (itemno == 103) {
 		/* Double click on folder name or "Select" clicked */
-		GetDItem(dialog, 7,  &type, &item, &box);
+		GetDialogItem(dialog, 7,  &type, &item, &box);
 		GetMouse(&where);
 		if (!PtInRect(where, &box))
 			itemno = 1;		/* Treat like file open */

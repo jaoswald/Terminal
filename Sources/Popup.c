@@ -77,7 +77,7 @@ static pascal void DrawPopUp(	/* Called as user item in dialog */
 		short type;
 		Handle hdl;
 
-		GetDItem(dialog, item, &type, &hdl, &box);
+		GetDialogItem(dialog, item, &type, &hdl, &box);
 	}
 
 	/* Get and draw menu title. Get item text. */
@@ -90,7 +90,7 @@ static pascal void DrawPopUp(	/* Called as user item in dialog */
 		s = (**(p->h)).menuData;	/* Menu title */
 		MoveTo(box.left - StringWidth(s) - 2, box.top + info.ascent);
 		DrawString(s);
-		GetItem(p->h, p->choice, text);
+		GetMenuItemText(p->h, p->choice, text);
 	}
 
 	/* Adjust item text so it fits in the box. */
@@ -151,7 +151,7 @@ Boolean PopupMousedown(				/* Called from dialog filter */
 
 	loc = event->where;
 	GlobalToLocal(&loc);
-	if ((item = FindDItem(dialog, loc) + 1) < 1)
+	if ((item = FindDialogItem(dialog, loc) + 1) < 1)
 		return result;
 	p = FindPopup(item);
 	if (!p || !p->h)
@@ -159,7 +159,7 @@ Boolean PopupMousedown(				/* Called from dialog filter */
 
 	/* Coordinate calculations */
 
-	GetDItem(dialog, item, &type, &hdl, &box);
+	GetDialogItem(dialog, item, &type, &hdl, &box);
 	loc = topLeft(box);
 	LocalToGlobal(&loc);
 	title = box;
@@ -222,7 +222,7 @@ void PopupInit(
 	while (p->item) {
 		if (p->h = GetMenu(p->menu)) {
 			/* Correct user item box. */
-			GetDItem(dialog, p->item, &type, &hdl, &box);
+			GetDialogItem(dialog, p->item, &type, &hdl, &box);
 			CalcMenuSize(p->h);
 			w = (**(p->h)).menuWidth;
 #ifdef NEWPOPUP
@@ -232,7 +232,7 @@ void PopupInit(
 				box.right = box.left + w;
 			box.bottom = box.top +
 				info.ascent + info.descent + info.leading;
-			SetDItem(dialog, p->item, type, (Handle)DrawPopUp, &box);
+			SetDialogItem(dialog, p->item, type, (Handle)DrawPopUp, &box);
 		}
 		++p;
 	}

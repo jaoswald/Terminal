@@ -46,23 +46,23 @@ static pascal void ScrollText(
 	register short ex;
 
 	switch (part) {
-		case inUpButton:
+		case kControlUpButtonPart:
 			delta = -Row;
 			break;
-		case inDownButton:
+		case kControlDownButtonPart:
 			delta = Row;
 			break;
-		case inPageUp:
+		case kControlPageUpPart:
 			delta = -Page;
 			break;
-		case inPageDown:
+		case kControlPageDownPart:
 			delta = Page;
 			break;
 		default:
 			return;
 	}
-	SetCtlValue(ch, (ex = GetCtlValue(ch)) + delta);
-	if (ex -= GetCtlValue(ch))
+	SetControlValue(ch, (ex = GetControlValue(ch)) + delta);
+	if (ex -= GetControlValue(ch))
 		Scroll((DocumentPeek)Window, ex);
 }
 
@@ -82,15 +82,15 @@ void DocumentClick(
 			window->vs == control) {
 		Row = 1;
 		Page = window->linesPage - 1;
-		if (part == inThumb) {
-			ex = GetCtlValue(control);
+		if (part == kControlIndicatorPart) {
+			ex = GetControlValue(control);
 			part = TrackControl(control, where, 0);
-			SetCtlValue(control, GetCtlValue(control));
-			if (ex -= GetCtlValue(control))
+			SetControlValue(control, GetControlValue(control));
+			if (ex -= GetControlValue(control))
 				Scroll(window, ex);
 		} else {
 			Window = (WindowPtr)window;
-			part = TrackControl(control, where, (ProcPtr)ScrollText);
+			part = TrackControl(control, where, (ControlActionUPP)ScrollText);
 		}
 		return;
 	}
@@ -123,5 +123,5 @@ void AdjustScrollBar(register DocumentPeek window)
 	} else
 		HiliteControl(c, a);
 	(**c).contrlMax = max;
-	SetCtlValue(c, max);
+	SetControlValue(c, max);
 }

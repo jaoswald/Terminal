@@ -251,7 +251,7 @@ static INTEGER SI_date(INTEGER params[])
 {
 	DateTimeRec r;
 
-	Secs2Date(params[0], &r);
+	SecondsToDate(params[0], &r);
 	*(long *)params[1] = r.year;
 	*(long *)params[2] = r.month;
 	*(long *)params[3] = r.day;
@@ -273,7 +273,7 @@ static INTEGER SI_new(INTEGER params[])
 
 static INTEGER SI_free(INTEGER params[])
 {
-	DisposPtr((Ptr)params[0]);
+	DisposePtr((Ptr)params[0]);
 	return 0;
 }
 

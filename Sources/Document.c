@@ -96,7 +96,7 @@ void DrawDocument(
 
 	SetPort((GrafPtr)window);
 
-	n = GetCtlValue(window->vs);			/* First visible line */
+	n = GetControlValue(window->vs);		/* First visible line */
 	if (delta > 0) {						/* Scroll back */
 		line1 = n;							/* First lines in window */
 		line2 = line1 + Min(delta, window->linesPage);
@@ -173,7 +173,7 @@ void ClearBuffer(void)
 			p->viewChar = p->viewLine = 0;
 		(p->text)[0] = '\015';
 		window->cursor = window->cursor0;
-		SetCtlValue(window->vs, 0);
+		SetControlValue(window->vs, 0);
 		AdjustScrollBar(window);
 		SetPort((GrafPtr)window);
 		EraseRect(&window->rect);

@@ -117,7 +117,7 @@ void XYOptions(void)
 						R_BATCH_N,
 					n);	/* Timeout */
 			case B_CANCEL:
-				DisposDialog(dialog);
+				DisposeDialog(dialog);
 				return;
 			case C_CRC:
 				if (active)

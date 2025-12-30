@@ -71,7 +71,7 @@ void ProtocolOptions(void)
 					GetRadioButton(dialog,R_XYMODEM,R_ZMODEM) - R_XYMODEM,
 					GetCheck(dialog, C_ZAUTORX));
 			case B_CANCEL:
-				DisposDialog(dialog);
+				DisposeDialog(dialog);
 				return;
 			case C_BIN:
 			case C_CISB:

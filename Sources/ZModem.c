@@ -311,7 +311,7 @@ static void DisposeTxBuffer (void)
 	while (Busy)
 		;
 	if (TxBuffer)
-		DisposPtr((Ptr)TxBuffer);
+		DisposePtr((Ptr)TxBuffer);
 	TxBuffer = 0;
 }
 
@@ -1037,7 +1037,7 @@ static void ConvertTime (Boolean toMac, unsigned long *t)
 {
 	unsigned long t0;
 
-	Date2Secs(&ZTimeOrigin, &t0);
+	DateToSeconds(&ZTimeOrigin, &t0);
 	*t = toMac ? (*t + t0) : (*t - t0);
 }
 
@@ -1654,7 +1654,7 @@ done1:
 	}
 	DisposeTxBuffer();
 	if (Buffer)
-		DisposPtr((Ptr)Buffer);
+		DisposePtr((Ptr)Buffer);
 	if (Vers)
 			DeleteFile(Settings.volume, Settings.directory, tempname);
 	return err;
@@ -2237,6 +2237,6 @@ done:
 	}
 	DisposeTxBuffer();				/* Get rid of transmit buffer */
 	if (Buffer)						/* Get rid of receive buffer */
-		DisposPtr((Ptr)Buffer);
+		DisposePtr((Ptr)Buffer);
 	return err;
 }

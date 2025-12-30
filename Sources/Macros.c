@@ -129,7 +129,7 @@ static long ParseMacros(
 		if (!(mh = GetMenu(MACRO)))
 			return 0;
 		for (item = 0; item < MAXMACROS; ++item) {
-			SetItem(mh, item + DOMACRO1, "\p ");
+			SetMenuItemText(mh, item + DOMACRO1, "\p ");
 			DisableItem(mh, item + DOMACRO1);
 			p[item].x.offset = 0;
 			p[item].length = 0;
@@ -152,7 +152,7 @@ static long ParseMacros(
 				switch (c) {
 					case '\015':
 						if (macros && item < MAXMACROS) {
-							SetItem(mh, item + DOMACRO1, name);
+							SetMenuItemText(mh, item + DOMACRO1, name);
 							EnableItem(mh, item + DOMACRO1);
 							p[item].x.ptr = q + 1;
 						}
@@ -226,7 +226,7 @@ void NameMacro(
 	if (!(MacrosText && (mh = GetMenu(MACRO)) &&
 			item >= DOMACRO1 && item < DOMACRO1 + MAXMACROS))
 		return;
-	GetItem(mh, item, name);
+	GetMenuItemText(mh, item, name);
 	return;
 }
 
@@ -360,7 +360,7 @@ short LoadMacros(
 	/* Get rid of previous macros */
 
 	if (MacrosText) {
-		DisposHandle(MacrosText);
+		DisposeHandle(MacrosText);
 		MacrosText = 0;
 	}
 
@@ -370,7 +370,7 @@ short LoadMacros(
 	if (h = NewHandle(size)) {
 		HLock(h);
 		if (err = FSRead(ref, &size, *h))
-			DisposHandle(h);
+			DisposeHandle(h);
 	} else
 		err = memFullErr;
 	FSClose(ref);
@@ -383,12 +383,12 @@ short LoadMacros(
 		HLock(MacrosText);
 		ParseMacros((Byte *)*h, size, (Byte *)*MacrosText);
 		HUnlock(MacrosText);
-		DisposHandle(h);
+		DisposeHandle(h);
 		MoveHHi(MacrosText);
 		HLock(MacrosText);
 		err = noErr;
 	} else {
-		DisposHandle(h);
+		DisposeHandle(h);
 		err = memFullErr;
 	}
 	return err;

@@ -58,7 +58,7 @@ void SendOptions(void)
 					StringToNum(str, &linedelay);
 					if (linedelay < 0 || linedelay > 300) {
 						SysBeep(1);
-						SelIText(dialog, E_LINE_DELAY, 0, 32767);
+						SelectDialogItemText(dialog, E_LINE_DELAY, 0, 32767);
 						number = 0;
 						break;
 					}
@@ -66,7 +66,7 @@ void SendOptions(void)
 					StringToNum(str, &chardelay);
 					if (chardelay < 0 || chardelay > 300) {
 						SysBeep(1);
-						SelIText(dialog, E_CHAR_DELAY, 0, 32767);
+						SelectDialogItemText(dialog, E_CHAR_DELAY, 0, 32767);
 						number = 0;
 						break;
 					}
@@ -78,5 +78,5 @@ void SendOptions(void)
 				break;
 		}
 	} while (number != B_OK && number != B_CANCEL);
-	DisposDialog(dialog);
+	DisposeDialog(dialog);
 }
