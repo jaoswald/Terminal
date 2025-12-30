@@ -184,9 +184,9 @@ Boolean SelectDirectory(
 		(void *)"!@#$", (DlgHookProcPtr)DirectoryHook, &reply, getDlgID,
 		(ModalFilterProcPtr)MyFilter);
 	if (reply.good) {
-		*volume = -SFSaveDisk;
-		*directory = reply.fType;
-		/* *directory = CurDirStore; */
+	  *volume = -LMGetSFSaveDisk();
+	  *directory = reply.fType;
+	  /* *directory = CurDirStore; */
 	}
 	return reply.good;
 }

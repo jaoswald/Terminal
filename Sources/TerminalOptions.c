@@ -110,17 +110,17 @@ void TerminalOptions(void)
 					&sfr, 0);
 				RedrawDocument();
 				if (sfr.good) {
-					volume = -SFSaveDisk;
-					directory = CurDirStore;
-					memcpy(name, sfr.fName, *sfr.fName + 1);
+				  volume = -LMGetSFSaveDisk();
+				  directory = LMGetCurDirStore();
+				  memcpy(name, sfr.fName, *sfr.fName + 1);
 #ifdef FULLPATH
-					Pathname(str, volume, directory);
+				  Pathname(str, volume, directory);
 #else
-					*str = 0;
+				  *str = 0;
 #endif
-					Append(str, name);
-					SetEText(dialog, T_START_PATH, str);
-					SetCheck(dialog, C_START_ENABLE, TRUE);
+				  Append(str, name);
+				  SetEText(dialog, T_START_PATH, str);
+				  SetCheck(dialog, C_START_ENABLE, TRUE);
 				}
 				break;
 			case C_SAVE:

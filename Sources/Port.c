@@ -576,6 +576,6 @@ Boolean SerialDCD(void)
 
 	if (!INPUT || PORTNO < 1 || PORTNO > 2)
 		return FALSE;
-	r = *(SCCRd + ((PORTNO == 2) ? 0 : 2));	/* SCC channel A/B control */
+	r = *(LMGetSCCRd() + ((PORTNO == 2) ? 0 : 2));	/* SCC channel A/B control */
 	return !(r & 0x08);						/* DCD is bit 3 */
 }

@@ -175,8 +175,8 @@ static void WindowScreen(
 	if (!(rgn = NewRgn()))
 		return;
 	SetRectRgn(rgn, p->h, p->v - 15, p->h + 50, p->v + 15);
-	UnionRgn(GrayRgn, rgn, rgn);
-	if (!EqualRgn(GrayRgn, rgn)) {
+	UnionRgn(GetGrayRgn(), rgn, rgn);
+	if (!EqualRgn(GetGrayRgn(), rgn)) {
 		p->h = dh;
 		p->v = dv;
 	}
