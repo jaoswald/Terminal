@@ -4,6 +4,7 @@ project(Terminal C)
 # Terminal application program compiled by Retro68 toolchain.
 #
 add_application(Terminal ../Sources/Terminal.r)
+enable_language(ASM)
 
 target_sources(Terminal PRIVATE
 			../Sources/CancelDialog.h
@@ -58,7 +59,7 @@ target_sources(Terminal PRIVATE
 			../Sources/XOptions.c
 			../Sources/ZModem.c
 			../Sources/ZOptions.c)
-target_sources(Terminal PRIVATE	../Sources/Glue.a)
+target_sources(Terminal PRIVATE	../Sources/Glue.s)
 
 # Enable -ffunction-sections and -gc-sections to make the app as small as possible
 set_target_properties(Terminal PROPERTIES COMPILE_OPTIONS -ffunction-sections)
