@@ -100,13 +100,13 @@ static pascal void DrawPopUp(	/* Called as user item in dialog */
 		register short newWid = StringWidth(text);
 
 		if (newWid > wid) {
-			wid -= CharWidth('É');
+			wid -= CharWidth('\311');
 			do {
 				newWid -= CharWidth(text[text[0]]);
 				--text[0];
 			} while (newWid > wid && text[0]);
 			++text[0];
-			text[text[0]] = 'É';
+			text[text[0]] = '\311';
 		}
 	}
 
