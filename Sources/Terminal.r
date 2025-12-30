@@ -1,5 +1,3 @@
-include "Seagate:Terminal Ä:Terminal ¹.Rsrc";
-
 #include "Types.r"
 
 resource 'SIZE' (-1) {
@@ -11,7 +9,7 @@ resource 'SIZE' (-1) {
 	backgroundAndForeground,
 	dontGetFrontClicks,
 	ignoreChildDiedEvents,
-	32BitCompatible,
+	is32BitCompatible,
 	reserved,
 	reserved,
 	reserved,
