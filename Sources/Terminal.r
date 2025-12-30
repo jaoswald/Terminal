@@ -1150,6 +1150,31 @@ resource 'FREF' (132, purgeable) {
   ""
 };
 
+// A configuration resource for the Terminal application.
+type 'CNFG' {
+  fill word;
+  integer; /* font size */
+  integer; /* lines */
+  integer; /* columns */
+
+  longint; /* terminal buffer size */
+  longint; /* serial input buffer size */
+  fill long;
+  longint; /* script memory size */
+  pstring; /* font name */
+};
+
+// Default configuration compiled into Terminal application.
+resource 'CNFG' (128) {
+    9,       /* font size */
+    24,      /* lines */
+    81,      /* columns */
+    0x8000,  /* terminal buffer size */
+    0x1000,  /* serial input buffer size */
+    0x4000,  /* script memory size */
+    "Monaco" /* pstring font name */
+};
+
 resource 'vers' (1, purgeable) {
  $02, $20, /* version 2.2.0 */
  final,    /* release stage */
