@@ -3,6 +3,8 @@
 	"Interp.h"
 */
 
+#include <MacTypes.h>
+
 typedef long INTEGER;		/* Pointers and integers are mixed */
 
 /* ----- Intrinsic function table (provided by shell) ------------------ */

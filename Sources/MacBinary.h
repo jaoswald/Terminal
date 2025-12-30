@@ -3,6 +3,8 @@
 	"MacBinary.h"
 */
 
+#include <MacTypes.h>
+
 #define BinHeaderLength 128
 
 short BinCheckHeader (Byte *, Byte *, long *, long *);

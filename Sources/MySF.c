@@ -11,6 +11,10 @@
 #pragma segment Main2
 #endif
 
+#include <LowMem.h>
+#include <StandardFile.h>
+
+
 #include "MySF.h"
 #include "Strings.h"
 #include "Utilities.h"

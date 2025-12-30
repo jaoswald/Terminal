@@ -11,6 +11,8 @@
 #pragma segment Main2
 #endif
 
+#include <ControlDefinitions.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Scroll.h"

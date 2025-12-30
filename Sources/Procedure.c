@@ -13,6 +13,9 @@
 
 #include <string.h>
 
+#include <SegLoad.h>
+#include <StringCompare.h>
+
 #include "Procedure.h"
 #include "Text.h"
 #include "Main.h"

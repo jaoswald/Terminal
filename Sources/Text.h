@@ -2,6 +2,7 @@
 	Terminal 2.2
 	"Text.h"
 */
+#include <MacTypes.h>
 
 typedef struct {
 	Byte	*text;		/* Pointer to text buffer */

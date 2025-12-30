@@ -11,6 +11,10 @@
 #pragma segment Main2
 #endif
 
+#include <Dialogs.h>
+#include <Resources.h>
+#include <NumberFormatting.h>
+
 #include "CancelDialog.h"
 #include "Text.h"
 #include "Main.h"

@@ -2,6 +2,7 @@
 	Terminal 2.2
 	"Procedure.h"
 */
+#include <MacTypes.h>
 
 short Display (Byte *);
 short Download (Byte *, Boolean, short);

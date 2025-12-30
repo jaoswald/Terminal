@@ -2,6 +2,8 @@
 	Terminal 2.2
 	"Main.h"
 */
+#include <Controls.h>
+#include <MacWindows.h>
 
 #define	MENUBAR		128
 #define	APPLE		128

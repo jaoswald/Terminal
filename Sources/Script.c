@@ -14,6 +14,10 @@
 #include <ctype.h>
 #include <string.h>
 
+#include <DateTimeUtils.h>
+#include <NumberFormatting.h>
+#include <Sound.h>
+
 #include "Interp.h"
 #include "Text.h"
 #include "Main.h"

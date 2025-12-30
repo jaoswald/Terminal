@@ -11,6 +11,9 @@
 #pragma segment Options
 #endif
 
+#include <NumberFormatting.h>
+#include <Sound.h>
+
 #include "Options.h"
 #include "Strings.h"
 #include "Utilities.h"

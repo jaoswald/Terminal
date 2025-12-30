@@ -13,6 +13,13 @@
 
 #include <string.h>
 
+#include <Devices.h>
+#include <DiskInit.h>
+#include <Resources.h>
+#include <Scrap.h>
+#include <SegLoad.h>
+#include <ToolUtils.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Strings.h"

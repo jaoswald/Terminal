@@ -13,6 +13,9 @@
 
 #include <string.h>
 
+#include <SegLoad.h>
+#include <Sound.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Document.h"

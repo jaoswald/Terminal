@@ -2,6 +2,8 @@
 	Terminal 2.2
 	"CancelDialog.h"
 */
+#include <MacTypes.h>
+#include <Sound.h>
 
 Boolean CheckCancel (void);
 void DrawCancelDialog (short, Byte *);

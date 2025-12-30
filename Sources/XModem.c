@@ -13,6 +13,8 @@
 
 #include <string.h>
 
+#include <NumberFormatting.h>
+
 #include "XModem.h"
 #include "CRC.h"
 #include "Strings.h"

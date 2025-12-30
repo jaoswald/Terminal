@@ -14,6 +14,12 @@
 #include <setjmp.h>
 #include <string.h>
 
+#include <Devices.h>
+#include <Menus.h>
+#include <Scrap.h>
+#include <SegLoad.h>
+#include <StringCompare.h>
+
 #include "File.h"
 #include "Text.h"
 #include "Main.h"

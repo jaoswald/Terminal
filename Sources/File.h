@@ -3,6 +3,8 @@
 	"File.h"
 */
 
+#include <MacTypes.h>
+
 void ByteCapture (Byte);
 short Convert(short, long, Byte *, short, long, Byte *);
 short CopyFile(short);

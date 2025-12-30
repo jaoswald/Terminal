@@ -3,6 +3,9 @@
 	"Utilities.h"
 */
 
+#include <Dialogs.h>
+#include <MacTypes.h>
+
 void ActivateDeactivate (DialogPtr, short, Boolean);
 Byte *Append (Byte *, Byte *);
 Boolean CheckSuffix(Byte *, Byte *);

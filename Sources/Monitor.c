@@ -11,6 +11,8 @@
 #pragma segment ZModem
 #endif
 
+#include <Files.h>
+
 #include "Monitor.h"
 #include "FormatStr.h"
 #include "Util.h"

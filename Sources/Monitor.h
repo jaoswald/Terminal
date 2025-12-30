@@ -3,6 +3,8 @@
 	"Monitor.h"
 */
 
+#include <MacTypes.h>
+
 void MonitorOpen(Byte *, short, long);
 void MonitorClose(void);
 void MonitorDump(Byte *, long);

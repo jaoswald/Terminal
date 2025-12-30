@@ -13,6 +13,9 @@
 
 #include <string.h>
 
+#include <Sound.h>
+#include <NumberFormatting.h>
+
 #include "Options.h"
 #include "Strings.h"
 #include "Utilities.h"

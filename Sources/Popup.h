@@ -2,6 +2,7 @@
 	Terminal 2.2
 	"Popup.h"
 */
+#include <Menus.h>
 
 typedef struct {
 	short item;		/* Dialog item id */

@@ -11,6 +11,9 @@
 #pragma segment Options
 #endif
 
+#include <Dialogs.h>
+#include <Resources.h>
+
 #include "Popup.h"
 #include "Util.h"
 

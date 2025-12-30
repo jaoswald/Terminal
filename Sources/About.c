@@ -11,6 +11,9 @@
 #pragma segment About
 #endif
 
+#include <Dialogs.h>
+#include <NumberFormatting.h>
+#include <Resources.h>
 #include <string.h>
 
 #include "Text.h"

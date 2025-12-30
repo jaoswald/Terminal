@@ -21,6 +21,12 @@
 
 #include <string.h>
 
+#include <ControlDefinitions.h>
+#include <Fonts.h>
+#include <Resources.h>
+#include <Script.h>
+#include <Serial.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Strings.h"

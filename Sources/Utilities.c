@@ -13,6 +13,9 @@
 
 #include <string.h>
 
+#include <MacMemory.h>
+#include <Resources.h>
+
 #include "Utilities.h"
 #include "Text.h"
 #include "Main.h"

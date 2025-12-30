@@ -13,6 +13,9 @@
 
 #include <string.h>
 
+#include <LowMem.h>
+#include <StringCompare.h>
+
 #include "Options.h"
 #include "Strings.h"
 #include "Utilities.h"

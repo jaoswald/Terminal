@@ -3,6 +3,8 @@
 	"Serial.h"
 */
 
+#include <MacTypes.h>
+
 typedef Boolean (*SDPROC)(short, Byte *, Byte *, Byte *);
 
 Boolean Serial8Bits(short);

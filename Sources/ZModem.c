@@ -14,11 +14,13 @@
 #include <setjmp.h>
 #include <string.h>
 
+#include <NumberFormatting.h>
+
 #include "Text.h"
 #include "Main.h"
 #include "Port.h"
 #include "CancelDialog.h"
-#include "Crc.h"
+#include "CRC.h"
 #include "Utilities.h"
 #include "Strings.h"
 #include "FormatStr.h"
