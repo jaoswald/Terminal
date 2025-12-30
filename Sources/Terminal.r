@@ -31,7 +31,7 @@ resource 'MENU' (128) {
 	enabled,
 	apple,
 	{
-	"About Terminal...", noIcon, noKey, noMark, plain,
+	"About Terminal\$c9", noIcon, noKey, noMark, plain,  // $c9 = `...`
 	"-", noIcon, noKey, noMark, plain
 	}
 };
@@ -43,16 +43,16 @@ resource 'MENU' (129) {
 	enabled,
 	"File",
 	{
-	  "Save capture buffer...", noIcon, noKey, noMark, plain,
-	  "Text capture...", noIcon, noKey, noMark, plain,
-	  "Text send...", noIcon, "S", noMark, plain,
+	  "Save capture buffer\$c9", noIcon, noKey, noMark, plain,  // $c9 = `...`
+	  "Text capture\$c9", noIcon, noKey, noMark, plain,
+	  "Text send\$c9", noIcon, "S", noMark, plain,
 	  "-", noIcon, noKey, noMark, plain,
-	  "File receive...", noIcon, "R", noMark, plain,
-	  "File transmit...", noIcon, "T", noMark, plain,
+	  "File receive\$c9", noIcon, "R", noMark, plain,
+	  "File transmit\$c9", noIcon, "T", noMark, plain,
 	  "-", noIcon, noKey, noMark, plain,
-	  "Make MacBinary file...", noIcon, noKey, noMark, plain,
-	  "Extract from MacBinary file...", noIcon, noKey, noMark, plain,
-	  "Kiss script file...", noIcon, noKey, noMark, plain,
+	  "Make MacBinary file\$c9", noIcon, noKey, noMark, plain,
+	  "Extract from MacBinary file\$c9", noIcon, noKey, noMark, plain,
+	  "Kiss script file\$c9", noIcon, noKey, noMark, plain,
 	  "-", noIcon, noKey, noMark, plain,
 	  "Quit", noIcon, "Q", noMark, plain
 	  }
@@ -90,13 +90,13 @@ resource 'MENU' (131) {
 	enabled,
 	"Options",
 	{
-		"Communication...", noIcon, "M", noMark, plain,
-		"TEXT file send...", noIcon, noKey, noMark, plain,
-		"Terminal...", noIcon, noKey, noMark, plain,
-		"Other...", noIcon, noKey, noMark, plain,
-		"Binary File transfer...", noIcon, noKey, noMark, plain,
-		"XY-Modem...", noIcon, noKey, noMark, plain,
-		"Z-Modem...", noIcon, noKey, noMark, plain
+		"Communication\$c9", noIcon, "M", noMark, plain,    // $c9 = `...`
+		"TEXT file send\$c9", noIcon, noKey, noMark, plain,
+		"Terminal\$c9", noIcon, noKey, noMark, plain,
+		"Other\$c9", noIcon, noKey, noMark, plain,
+		"Binary File transfer\$c9", noIcon, noKey, noMark, plain,
+		"XY-Modem\$c9", noIcon, noKey, noMark, plain,
+		"Z-Modem\$c9", noIcon, noKey, noMark, plain
 	}
 };
 
@@ -107,7 +107,7 @@ resource 'MENU' (132) {
 	enabled,
 	"Scripts",
 	{
-	"Execute script...", noIcon, "E", noMark, plain,
+	"Execute script\$c9", noIcon, "E", noMark, plain,  // $c9 = `...`
 	"-", noIcon, noKey, noMark, plain
 	}
 };
@@ -119,7 +119,7 @@ resource 'MENU' (133) {
 	enabled,
 	"Macros",
 	{
-	"Load macros...", noIcon, "L", noMark, plain,
+	"Load macros\$c9", noIcon, "L", noMark, plain,    // $c9 = `...`
 	"-", noIcon, noKey, noMark, plain,
 	"", noIcon, "0", noMark, plain,
 	"", noIcon, "1", noMark, plain,
