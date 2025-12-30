@@ -28,7 +28,7 @@
 #define AboutLine1	6
 #define AboutLine2	7
 
-char Erny[] = 
+char* Erny =
 	"\pWritten by:\015ÊÊErny Tontlinger (CIS 73720,2200)\015"
 	"ÊÊ33, route d'Arlon\015ÊÊL-8410 Steinfort\015ÊÊLuxembourg";
 
@@ -61,7 +61,7 @@ static pascal void DrawUser(	/* Called by Dialog Manager */
 	Handle itemHdl;
 	Rect box;
 
-	GetDItem(dialog, item, &type, &itemHdl, &box);
+	GetDialogItem(dialog, item, &type, &itemHdl, &box);
 	if (h = GetResource('ICN#', Application.icon)) {
 		HLock(h);
 		PlotIcon(&box, h);
@@ -98,16 +98,16 @@ void About(short option)
 		SetEText(dialog, AboutText, s);
 		NumToString(heap, num);
 		SetEText(dialog, AboutHp, num);
-		GetDItem(dialog, AboutIcon, &item, &itemHdl, &box);
-		SetDItem(dialog, AboutIcon, item, (Handle)DrawUser, &box);
-		GetDItem(dialog, AboutLine1, &item, &itemHdl, &box);
-		SetDItem(dialog, AboutLine1, item, (Handle)DrawUserLine, &box);
-		GetDItem(dialog, AboutLine2, &item, &itemHdl, &box);
-		SetDItem(dialog, AboutLine2, item, (Handle)DrawUserLine, &box);
+		GetDialogItem(dialog, AboutIcon, &item, &itemHdl, &box);
+		SetDialogItem(dialog, AboutIcon, item, (Handle)DrawUser, &box);
+		GetDialogItem(dialog, AboutLine1, &item, &itemHdl, &box);
+		SetDialogItem(dialog, AboutLine1, item, (Handle)DrawUserLine, &box);
+		GetDialogItem(dialog, AboutLine2, &item, &itemHdl, &box);
+		SetDialogItem(dialog, AboutLine2, item, (Handle)DrawUserLine, &box);
 		GetVersion(1, num);
 		SetEText(dialog, AboutVers, num);
 		ModalDialog(0, &item);
-		DisposDialog(dialog);
+		DisposeDialog(dialog);
 	}
 	if (IDStrHandle)
 		ReleaseResource(IDStrHandle);
