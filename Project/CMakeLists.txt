@@ -25,6 +25,7 @@ target_sources(Terminal PRIVATE
 			../Sources/Procedure.h
 			../Sources/Scroll.h
 			../Sources/Strings.h
+			../Sources/StrUtil.h
 			../Sources/Text.h
 			../Sources/Utilities.h
 			../Sources/XModem.h
@@ -53,6 +54,7 @@ target_sources(Terminal PRIVATE
 			../Sources/Script.c
 			../Sources/Scroll.c
 			../Sources/SendOptions.c
+			../Sources/StrUtil.c
 			../Sources/TerminalOptions.c
 			../Sources/Text.c
 			../Sources/Utilities.c
