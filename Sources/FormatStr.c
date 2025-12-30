@@ -33,6 +33,7 @@
 #endif
 
 Byte *FormatStr(Byte *string, Byte *template);
+#include "Util.h"
 Byte *SFormatStr(Byte *string, Byte *template, long *param);
 
 static void MoveBytes(

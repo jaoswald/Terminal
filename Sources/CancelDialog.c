@@ -16,6 +16,7 @@
 #include "Main.h"
 #include "Document.h"
 #include "Strings.h"
+#include "Util.h"
 #include "Utilities.h"
 #include "FormatStr.h"
 

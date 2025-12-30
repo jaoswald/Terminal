@@ -34,32 +34,14 @@
 #include <Types.h>
 #include <Windows.h>
 
+#include "Util.h"
+
 /* Macros not found in MPW, but used by THINK C */
 
 /* typedef unsigned char Byte; */	/* Is now defined in "Types.h" of MPW 3.2 */
-enum { FALSE, TRUE };
-#define topLeft(r)	(((Point *) &(r))[0])
-#define botRight(r)	(((Point *) &(r))[1])
+
 #define CtoPstr		c2pstr
 #define PtoCstr		p2cstr
-
-/* Low memory globals are real variables in THINK C,
-but are only address constants in MPW */
-
-#define Time			(*(long *)0x20C)
-#define Ticks			(*(long *)0x16A)
-#define SCCRd			(*(Ptr *)0x1D8)
-#define SFSaveDisk		(*(short *)0x214)
-#define CurDirStore		(*(long *)0x398)
-#define CurStackBase	(*(Ptr *)0x908)
-#define GrayRgn			(*(RgnHandle *)0x9EE)
-#define MemErr			(*(short *)0x220)
-#define MBarHeight		(*(short *)0xBAA)
-
-/* The QuickDraw global variables structure does not
-exist in THINK C, so use a macro to generate the names */
-
-#define QD(x)	(qd.x)
 
 /*
 	Attention:

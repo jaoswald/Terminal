@@ -15,6 +15,7 @@
 #include "Text.h"
 #include "Main.h"
 #include "Document.h"
+#include "Util.h"
 
 /* ----- Calculate number of bytes to make multiple of block size ------ */
 

@@ -24,6 +24,7 @@
 #include "Macros.h"
 #include "CancelDialog.h"
 #include "Crc.h"
+#include "Util.h"
 
 #define CAN		0x18	/* Cntrl-X */
 

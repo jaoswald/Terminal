@@ -20,6 +20,7 @@
 #include "Port.h"
 #include "MacBinary.h"
 #include "CRC.h"
+#include "Util.h"
 
 #define ETX			0x03
 #define DLE 		0x10

@@ -5,7 +5,6 @@ project(Terminal C)
 #
 add_application(Terminal ../Sources/Terminal.r)
 enable_language(ASM)
-
 target_sources(Terminal PRIVATE
 			../Sources/CancelDialog.h
 			../Sources/CisB.h
@@ -27,6 +26,7 @@ target_sources(Terminal PRIVATE
 			../Sources/Strings.h
 			../Sources/StrUtil.h
 			../Sources/Text.h
+			../Sources/Util.h
 			../Sources/Utilities.h
 			../Sources/XModem.h
 			../Sources/ZModem.h)

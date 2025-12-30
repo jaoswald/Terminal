@@ -12,6 +12,7 @@
 #endif
 
 #include "Popup.h"
+#include "Util.h"
 
 static POPUP *Popup;	/* Current popup structure array */
 

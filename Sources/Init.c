@@ -27,6 +27,7 @@
 #include "Port.h"
 #include "File.h"
 #include "Macros.h"
+#include "Util.h"
 
 /* Trap numbers */
 

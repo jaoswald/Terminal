@@ -5,13 +5,13 @@
 
 #ifdef THINK_C
 #include "MacHeaders"
-#define CREFNUM(x)	x.ioCRefNum
 #endif
 #ifdef applec
 #pragma load ":(Objects):MacHeadersMPW"
 #pragma segment Main2
-#define CREFNUM(x)	x.ioCRefNum
 #endif
+
+#define CREFNUM(x)	x.ioCRefNum
 
 #include "Port.h"
 #include "Text.h"

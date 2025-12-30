@@ -21,6 +21,7 @@
 #include "Port.h"
 #include "Macros.h"
 #include "Utilities.h"
+#include "Util.h"
 
 /* ----- beep() -------------------------------------------------------- */
 

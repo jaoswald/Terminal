@@ -12,6 +12,7 @@
 #endif
 
 #include "Text.h"
+#include "Util.h"
 
 /* ----- Remove last character from text buffer ------------------------ */
 

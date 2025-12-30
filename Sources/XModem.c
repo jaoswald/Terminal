@@ -21,6 +21,7 @@
 #include "Main.h"
 #include "MacBinary.h"
 #include "Document.h"
+#include "Util.h"
 
 /* #define MONITOR */
 

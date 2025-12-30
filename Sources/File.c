@@ -15,6 +15,7 @@
 #include "Text.h"
 #include "Main.h"
 #include "Strings.h"
+#include "Util.h"
 #include "Utilities.h"
 #include "MySF.h"
 #include "Document.h"

@@ -13,6 +13,7 @@
 
 #include "Monitor.h"
 #include "FormatStr.h"
+#include "Util.h"
 
 static short Ref = 0;
 static long Start;

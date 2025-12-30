@@ -21,6 +21,7 @@
 #include "FormatStr.h"
 #include "File.h"
 #include "MacBinary.h"
+#include "Util.h"
 
 #include "ZModem.h"
 
