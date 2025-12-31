@@ -1280,7 +1280,7 @@ resource 'FREF' (131, purgeable) {
   ""
 };
 
-resource 'FREF' (132, purgeable) {
+resource 'FREF' (132) {
   'ET_Z',
   4,
   ""
