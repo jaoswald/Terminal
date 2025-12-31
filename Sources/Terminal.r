@@ -1210,9 +1210,8 @@ resource 'STR#' (129, locked, preload) {
   "(MacBinary I)",
   "(MacBinary II)",
   "Sending text file: %s",
-  "Receiving text file: %s",
   "Receiving file:",
-  "Transmitting file:"
+  "Transmitting file:",
   "1K ",
   "Compuserve B file:",
   "Upload ",
@@ -1229,7 +1228,7 @@ resource 'STR#' (129, locked, preload) {
 
 resource 'STR#' (130, locked, preload) {
 { "Error #",
-  "File transfer completed: %l bytes in %s [%l bytes/sec] (err=%i)",
+  "File transfer completed: %l bytes in %s [%l bytes/sec]  (err=%i)",
   "File transfer in progress",
   "Unsupported configuration"
 }
@@ -1245,7 +1244,7 @@ resource 'STR#' (131, locked, preload) {
   "Out of heap memory",
   "undeclared identifier",
   "Syntax error",
-  "unmatched error",
+  "unmatched",
   "missing",
   "Not a function",
   "out of place",
