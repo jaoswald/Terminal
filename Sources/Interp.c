@@ -1468,7 +1468,7 @@ register enum errs erno;
 register Byte *s;
 {
 	register Byte *p;
-	register n;
+	register int n;
 
 	if (linenumber)
 		n = linenumber;

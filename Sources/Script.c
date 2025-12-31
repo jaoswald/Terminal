@@ -27,6 +27,7 @@
 #include "FormatStr.h"
 #include "Port.h"
 #include "Macros.h"
+#include "StrUtil.h"
 #include "Utilities.h"
 #include "Util.h"
 
