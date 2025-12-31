@@ -3,7 +3,7 @@ project(Terminal C)
 
 # Terminal application program compiled by Retro68 toolchain.
 #
-add_application(Terminal ../Sources/Terminal.r)
+add_application(Terminal ../Sources/Terminal.r TYPE "APPL" CREATOR "ET_T")
 enable_language(ASM)
 target_sources(Terminal PRIVATE
 			../Sources/CancelDialog.h
