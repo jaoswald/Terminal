@@ -271,6 +271,50 @@ resource 'DLOG' (131, purgeable) {
   noAutoCenter
 };
 
+resource 'DLOG' (132, purgeable) {
+  {80, 80, 304, 380},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  132, /* DITL Id */
+  "",
+  noAutoCenter,
+};
+
+resource 'DLOG' (133, purgeable) {
+  {40, 40, 216, 292},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  133, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DLOG' (134, purgeable) {
+  {36, 15, 187, 374},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  134, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
+resource 'DLOG' (135, purgeable) {
+  {40, 40, 308, 299},
+  dBoxProc,
+  invisible,
+  noGoAway,
+  0, /* refCon */
+  135, /* DITL Id */
+  "",
+  noAutoCenter
+};
+
 resource 'DLOG' (136, purgeable) {
   {40, 40, 309, 310},
   dBoxProc,
