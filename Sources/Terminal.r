@@ -20,8 +20,8 @@ resource 'SIZE' (-1) {
 	reserved,
 	reserved,
 	reserved,
-	163840,
-	163840
+	327670,  /* was 163840, but Retro68 generates larger code? */
+	327670
 };
 
 resource 'MENU' (128) {
