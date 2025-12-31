@@ -1304,6 +1304,13 @@ resource 'BNDL' (128, purgeable) {
       4, 132 }
   }
 };
+
+data 'ET_T' (0, purgeable) {
+  "\$a0\$d2Terminal\$d3 is a compact and powerful serial communication program. "
+  "It's exactly what I wanted for my personal needs. "
+  "If you find it usefull, keep it. It's free!"
+};
+
 // A configuration resource for the Terminal application.
 type 'CNFG' {
   fill word;
