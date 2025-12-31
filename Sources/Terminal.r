@@ -1286,6 +1286,24 @@ resource 'FREF' (132, purgeable) {
   ""
 };
 
+resource 'BNDL' (128, purgeable) {
+  'ET_T',  // signature
+  0,
+  { 'FREF',
+    { 0, 128,
+      1, 129, /* ET_O */
+      2, 130, /* ET_B */
+      3, 131, /* TEXT */
+      4, 132   /* ET_Z */
+    },
+    'ICN#',
+    { 0, 128,
+      1, 129,
+      2, 130,
+      3, 131,
+      4, 132 }
+  }
+};
 // A configuration resource for the Terminal application.
 type 'CNFG' {
   fill word;
